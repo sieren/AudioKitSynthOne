@@ -65,7 +65,8 @@ public class AKTouchPadView: UIView {
 
         // Setup Touch Visual Indicators
         var width = 63.0
-        if Conductor.sharedInstance.device == .phone { width = 44.0 }
+        //TODO
+//        if conductor.device == .phone { width = 44.0 }
         touchPointView = TouchPoint(frame: CGRect(x: -200, y: -200, width: width, height: width))
         touchPointView.width = width
         touchPointView.center = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)

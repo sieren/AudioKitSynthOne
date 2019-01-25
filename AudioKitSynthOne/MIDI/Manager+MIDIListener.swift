@@ -123,7 +123,7 @@ extension Manager: AKMIDIListener {
     // MIDI Pitch Wheel
     public func receivedMIDIPitchWheel(_ pitchWheelValue: MIDIWord, channel: MIDIChannel) {
         guard channel == midiChannelIn || omniMode else { return }
-        guard let s = Conductor.sharedInstance.synth else {
+        guard let s = conductor.synth else {
             AKLog("Can't process MIDI pitch wheel because synth is not instantiated")
             return
         }
@@ -153,7 +153,7 @@ extension Manager: AKMIDIListener {
 
             let newMIDI = MIDIInput(name: inputName, isOpen: true)
             midiInputs.append(newMIDI)
-            AudioKit.midi.openInput(inputName)
+            AudioKit.midi.openInput(name: inputName)
         }
     }
 

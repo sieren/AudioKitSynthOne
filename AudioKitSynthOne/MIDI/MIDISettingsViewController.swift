@@ -20,7 +20,7 @@ protocol MIDISettingsPopOverDelegate: AnyObject {
     func didSetBuffer()
 }
 
-class MIDISettingsViewController: UIViewController {
+class MIDISettingsViewController: ConductorAwareViewController {
 
     @IBOutlet weak var channelStepper: Stepper!
     @IBOutlet weak var channelLabel: UILabel!
@@ -43,8 +43,6 @@ class MIDISettingsViewController: UIViewController {
     var userChannelIn: Int = 1
     var velocitySensitive = true
     var saveTuningWithPreset = false
-
-    let conductor = Conductor.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -258,9 +256,9 @@ extension MIDISettingsViewController: UITableViewDelegate {
 
         // Open / Close MIDI Input
         if midiInput.isOpen {
-            AudioKit.midi.openInput(midiInput.name)
+            AudioKit.midi.openInput(name: midiInput.name)
         } else {
-            AudioKit.midi.closeInput(midiInput.name)
+            AudioKit.midi.closeInput(name: midiInput.name)
         }
 
         delegate?.didChangeMIDISources(midiSources)

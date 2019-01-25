@@ -12,7 +12,7 @@ protocol PresetPopOverDelegate: AnyObject {
     func didFinishEditing(name: String, category: Int, newBank: String)
 }
 
-class PresetEditorViewController: UIViewController {
+class PresetEditorViewController: ConductorAwareViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var categoryTableView: UITableView!
     @IBOutlet weak var popupView: UIView!
@@ -27,7 +27,6 @@ class PresetEditorViewController: UIViewController {
     let cellReuseIdentifier = "PopUpCell"
     var categoryIndex = 0
 
-    let conductor = Conductor.sharedInstance
     var pickerBankNames = [String]()
     var bankSelected = "BankA"
 

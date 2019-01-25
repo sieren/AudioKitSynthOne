@@ -8,13 +8,16 @@
 
 import UIKit
 
-public class UpdatableViewController: UIViewController {
+public class ConductorAwareViewController: UIViewController {
+    var conductor: Conductor!
+}
 
-    let conductor = Conductor.sharedInstance
+public class UpdatableViewController: ConductorAwareViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        conductor.viewControllers.insert(self)
+        //TODO
+//        conductor.viewControllers.insert(self)
     }
 
     public override func viewDidAppear(_ animated: Bool) {

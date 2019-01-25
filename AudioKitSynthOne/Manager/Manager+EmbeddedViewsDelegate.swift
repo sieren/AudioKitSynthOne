@@ -29,22 +29,27 @@ extension Manager: EmbeddedViewsDelegate {
 
         switch newView {
         case .envelopes:
+            envelopesPanel.conductor = conductor
             add(asChildViewController: envelopesPanel, isTopContainer: isOnTop)
             envelopesPanel.navDelegate = self
             envelopesPanel.isTopContainer = isOnTop
         case .generators:
+            generatorsPanel.conductor = conductor
             add(asChildViewController: generatorsPanel, isTopContainer: isOnTop)
             generatorsPanel.navDelegate = self
             generatorsPanel.isTopContainer = isOnTop
         case .touchPad:
+            touchPadPanel.conductor = conductor
             add(asChildViewController: touchPadPanel, isTopContainer: isOnTop)
             touchPadPanel.navDelegate = self
             touchPadPanel.isTopContainer = isOnTop
         case .effects:
+            fxPanel.conductor = conductor
             add(asChildViewController: fxPanel, isTopContainer: isOnTop)
             fxPanel.navDelegate = self
             fxPanel.isTopContainer = isOnTop
         case .sequencer:
+            sequencerPanel.conductor = conductor
             add(asChildViewController: sequencerPanel, isTopContainer: isOnTop)
             sequencerPanel.navDelegate = self
             sequencerPanel.isTopContainer = isOnTop

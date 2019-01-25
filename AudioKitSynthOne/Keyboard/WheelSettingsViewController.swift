@@ -12,7 +12,7 @@ protocol ModWheelDelegate: AnyObject {
     func didSelectRouting(newDestination: Int)
 }
 
-class WheelSettingsViewController: UIViewController {
+class WheelSettingsViewController: ConductorAwareViewController {
 
     @IBOutlet weak var modWheelSegment: UISegmentedControl!
     weak var delegate: ModWheelDelegate?
@@ -25,8 +25,7 @@ class WheelSettingsViewController: UIViewController {
 
         modWheelSegment.selectedSegmentIndex = modWheelDestination
 
-        let c = Conductor.sharedInstance
-        guard let s = c.synth else {
+        guard let s = conductor.synth else {
             AKLog("PopUpMODController view state is invalid because synth is not instantiated")
             return
         }
@@ -34,12 +33,12 @@ class WheelSettingsViewController: UIViewController {
         pitchUpperRange.maxValue = s.getMaximum(.pitchbendMaxSemitones)
         pitchUpperRange.minValue = s.getMinimum(.pitchbendMaxSemitones)
         pitchUpperRange.value = s.getSynthParameter(.pitchbendMaxSemitones)
-        c.bind(pitchUpperRange, to: .pitchbendMaxSemitones)
+        conductor.bind(pitchUpperRange, to: .pitchbendMaxSemitones)
 
         pitchLowerRange.maxValue = s.getMaximum(.pitchbendMinSemitones)
         pitchLowerRange.minValue = s.getMinimum(.pitchbendMinSemitones)
         pitchLowerRange.value = s.getSynthParameter(.pitchbendMinSemitones)
-        c.bind(pitchLowerRange, to: .pitchbendMinSemitones)
+        conductor.bind(pitchLowerRange, to: .pitchbendMinSemitones)
 		
 		modWheelSegment.subviews[0].accessibilityLabel = NSLocalizedString("Cut-off", comment: "Cutoff (Word is hyphenated for proper VoiceOver pronunciation.  Do not consider for localization.)")
 		modWheelSegment.subviews[1].accessibilityLabel = NSLocalizedString("L F O 1", comment: "LFO 1 (Word is seperated for proper VoiceOver pronunciation.  Do not consider for localization.)")
@@ -49,7 +48,7 @@ class WheelSettingsViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let s = Conductor.sharedInstance.synth else {
+        guard let s = conductor.synth else {
             AKLog("PopUpMODController view state is invalid because synth is not instantiated")
             return
         }

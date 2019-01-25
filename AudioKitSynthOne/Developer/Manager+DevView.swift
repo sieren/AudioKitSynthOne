@@ -20,26 +20,26 @@ extension Manager: DevViewDelegate {
 
     func freezeArpRateChanged(_ value: Bool) {
         appSettings.freezeArpRate = value
-        Conductor.sharedInstance.updateDisplayLabel("Freeze Arp Rate: \(value == false ? "false" : "true")")
+        conductor.updateDisplayLabel("Freeze Arp Rate: \(value == false ? "false" : "true")")
     }
 
     func freezeReverbChanged(_ value: Bool) {
         appSettings.freezeReverb = value
-        Conductor.sharedInstance.updateDisplayLabel("Freeze Reverb: \(value == false ? "false" : "true")")
+        conductor.updateDisplayLabel("Freeze Reverb: \(value == false ? "false" : "true")")
     }
 
     func freezeDelayChanged(_ value: Bool) {
         appSettings.freezeDelay = value
-        Conductor.sharedInstance.updateDisplayLabel("Freeze Delay: \(value == false ? "false" : "true")")
+        conductor.updateDisplayLabel("Freeze Delay: \(value == false ? "false" : "true")")
     }
 
     func freezeArpSeqChanged(_ value: Bool) {
         appSettings.freezeArpSeq = value
-        Conductor.sharedInstance.updateDisplayLabel("Freeze Arp+Sequencer: \(value == false ? "false" : "true")")
+        conductor.updateDisplayLabel("Freeze Arp+Sequencer: \(value == false ? "false" : "true")")
     }
 
     func portamentoChanged(_ value: Double) {
         appSettings.portamentoHalfTime = value
-        Conductor.sharedInstance.updateDisplayLabel("dsp smoothing half time: \(value.decimalString)")
+        conductor.updateDisplayLabel("dsp smoothing half time: \(value.decimalString)")
     }
 }

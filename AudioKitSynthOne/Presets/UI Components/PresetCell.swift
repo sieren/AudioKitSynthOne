@@ -28,7 +28,7 @@ class PresetCell: UITableViewCell {
     
     weak var delegate: PresetCellDelegate?
     var currentPreset: Preset?
-    let conductor = Conductor.sharedInstance
+    var conductor: Conductor!
 
     // MARK: - Lifecycle
 

@@ -16,7 +16,6 @@ protocol S1Control: class {
 typealias S1ControlCallback = (S1Parameter, S1Control?) -> ((_: Double) -> Void)
 
 class Conductor: S1Protocol {
-    static var sharedInstance = Conductor()
     var neverSleep = false {
         didSet {
             UIApplication.shared.isIdleTimerDisabled = neverSleep
@@ -36,10 +35,10 @@ class Conductor: S1Protocol {
     let lfo1RateModWheelID: Int32 = 6
     let lfo2RateModWheelID: Int32 = 7
     let pitchBendID: Int32 = 8
+    public var viewControllers: Set<UpdatableViewController> = []
 
     var iaaTimer: Timer = Timer()
 
-    public var viewControllers: Set<UpdatableViewController> = []
     fileprivate var started = false
     
     let device = UIDevice.current.userInterfaceIdiom  
@@ -59,16 +58,8 @@ class Conductor: S1Protocol {
         }
     }
 
-    var changeParameter: S1ControlCallback  = { parameter, control in
-        return { value in
-            sharedInstance.synth.setSynthParameter(parameter, value)
-            sharedInstance.updateSingleUI(parameter, control: control, value: value)
-          }
-        } {
-        didSet {
-            AKLog("WARNING: changeParameter callback changed")
-        }
-    }
+    //TODO this was moved below
+    var changeParameter: S1ControlCallback!
 
     func updateSingleUI(_ parameter: S1Parameter,
                         control inputControl: S1Control?,
@@ -119,6 +110,15 @@ class Conductor: S1Protocol {
     }
 
     func start() {
+
+        //TODO MOved from above
+        changeParameter = { parameter, control in
+            return { value in
+                self.synth.setSynthParameter(parameter, value)
+                self.updateSingleUI(parameter, control: control, value: value)
+            }
+        }
+        
         #if DEBUG
         AKSettings.enableLogging = true
         AKLog("Logging is ON")
@@ -160,8 +160,8 @@ class Conductor: S1Protocol {
             audioUnitPropertyListener = AudioUnitPropertyListener { (_, _) in
                 let headerVC = self.viewControllers.first(where: { $0 is HeaderViewController })
                     as? HeaderViewController
-
                 headerVC?.hostAppIcon.image = AudioOutputUnitGetHostIcon(au, 44)
+                headerVC?.conductor = self
             }
 
             do {

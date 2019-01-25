@@ -240,6 +240,8 @@
 		F482CC5F2123CDE70093ADC8 /* sawtooth_1348.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC292123CDE70093ADC8 /* sawtooth_1348.json */; };
 		F482CC602123CDE70093ADC8 /* sawtooth_0021.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC2A2123CDE70093ADC8 /* sawtooth_0021.json */; };
 		F482CC612123CDE70093ADC8 /* pwm_0042.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC2B2123CDE70093ADC8 /* pwm_0042.json */; };
+		F496E5CF21FAC739008294C6 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F496E5CE21FAC739008294C6 /* AudioKit.framework */; };
+		F496E5D121FAC739008294C6 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F496E5D021FAC739008294C6 /* AudioKitUI.framework */; };
 		F4C9D9A321D6B13200B7C4E5 /* Tunings+UpgradePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9D9A221D6B13200B7C4E5 /* Tunings+UpgradePaths.swift */; };
 		F4E4D00421C5B9F2005B2FAF /* TuningBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4D00321C5B9F2005B2FAF /* TuningBank.swift */; };
 		F4E4D00721C81E34005B2FAF /* tunings_v0_upgrade_path_test.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E4D00521C81DB4005B2FAF /* tunings_v0_upgrade_path_test.json */; };
@@ -658,6 +660,8 @@
 		F482CC292123CDE70093ADC8 /* sawtooth_1348.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sawtooth_1348.json; sourceTree = "<group>"; };
 		F482CC2A2123CDE70093ADC8 /* sawtooth_0021.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sawtooth_0021.json; sourceTree = "<group>"; };
 		F482CC2B2123CDE70093ADC8 /* pwm_0042.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pwm_0042.json; sourceTree = "<group>"; };
+		F496E5CE21FAC739008294C6 /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F496E5D021FAC739008294C6 /* AudioKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C9D9A221D6B13200B7C4E5 /* Tunings+UpgradePaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tunings+UpgradePaths.swift"; sourceTree = "<group>"; };
 		F4CB749120EEE0AF00716B92 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F4E4D00321C5B9F2005B2FAF /* TuningBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningBank.swift; sourceTree = "<group>"; };
@@ -678,6 +682,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F496E5CF21FAC739008294C6 /* AudioKit.framework in Frameworks */,
+				F496E5D121FAC739008294C6 /* AudioKitUI.framework in Frameworks */,
 				48C3EE7437FA1B1E7916844E /* Pods_AudioKitSynthOne.framework in Frameworks */,
 				C4B9C02B201D54D400D9833D /* AudioToolbox.framework in Frameworks */,
 			);
@@ -736,6 +742,8 @@
 		9461F0371F5CAAE600EE226E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F496E5CE21FAC739008294C6 /* AudioKit.framework */,
+				F496E5D021FAC739008294C6 /* AudioKitUI.framework */,
 				C4B9C02A201D54D400D9833D /* AudioToolbox.framework */,
 				BA27CDAC229BF66A1C649B42 /* Pods_AudioKitSynthOne.framework */,
 				CB0076A913A8D9EB5B5A6C27 /* Pods_OneSignalNotificationServiceExtension.framework */,
@@ -2200,6 +2208,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)/../../Wilsonic_20170122_WilsonicMerge9_v1.7.9/AudioKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -2265,6 +2274,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)/../../Wilsonic_20170122_WilsonicMerge9_v1.7.9/AudioKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;

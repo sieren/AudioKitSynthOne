@@ -12,10 +12,10 @@ import AudioKit
 public class MIDIKnob: Knob, MIDILearnable {
 
     var timeSyncMode = false
+    var conductor: Conductor!
 
     // var midiLearnCallback: ()->Void = { }
     var hotspotView = UIView()
-    var conductor = Conductor.sharedInstance
 
     var isActive = false {
         didSet {

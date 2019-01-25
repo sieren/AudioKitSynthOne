@@ -17,7 +17,7 @@ protocol PresetsDelegate: AnyObject {
     func banksDidUpdate()
 }
 
-class PresetsViewController: UIViewController {
+class PresetsViewController: ConductorAwareViewController {
 
     @IBOutlet weak var newButton: SynthButton!
     @IBOutlet weak var importButton: SynthButton!
@@ -66,7 +66,6 @@ class PresetsViewController: UIViewController {
         return newIndex
     }
 
-    let conductor = Conductor.sharedInstance
     let userBankIndex = PresetCategory.bankStartingIndex + 1
     let userBankName = "User"
 

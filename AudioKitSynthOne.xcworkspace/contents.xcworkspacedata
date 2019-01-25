@@ -5,6 +5,9 @@
       location = "group:AudioKitSynthOne.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:../../Wilsonic_20170122_WilsonicMerge8_v1.7.9 (original 2)/AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

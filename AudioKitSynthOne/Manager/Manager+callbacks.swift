@@ -147,7 +147,7 @@ extension Manager {
         }
 
         pitchBend.callback = { value01 in
-            s.setDependentParameter(.pitchbend, value01, Conductor.sharedInstance.pitchBendID)
+            s.setDependentParameter(.pitchbend, value01, self.conductor.pitchBendID)
         }
 
         pitchBend.completionHandler = {  _, touchesEnded, reset in
@@ -155,7 +155,7 @@ extension Manager {
                 self.pitchBend.resetToCenter()
             }
             if reset {
-                s.setDependentParameter(.pitchbend, 0.5, Conductor.sharedInstance.pitchBendID)
+                s.setDependentParameter(.pitchbend, 0.5, self.conductor.pitchBendID)
             }
         }
     }

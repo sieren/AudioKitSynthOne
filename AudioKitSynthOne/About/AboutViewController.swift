@@ -58,14 +58,15 @@ class AboutViewController: UIViewController {
         
         githubButton.callback = { _ in
             self.githubButton.value = 0
-            
-            if Conductor.sharedInstance.device == .phone {
-                self.emailSend()
-            } else {
-                if let url = URL(string: "https://github.com/AudioKit/") {
-                    UIApplication.shared.open(url)
-                }
-            }
+
+            //TODO - this whole block was commented out for AUv3 test
+//            if conductor.device == .phone {
+//                self.emailSend()
+//            } else {
+//                if let url = URL(string: "https://github.com/AudioKit/") {
+//                    UIApplication.shared.open(url)
+//                }
+//            }
         }
         
         videoButton.callback = { _ in

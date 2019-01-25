@@ -23,8 +23,7 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var labelTrailingConstraint: NSLayoutConstraint!
     
     var currentCategory: String = ""
-    let conductor = Conductor.sharedInstance
-
+    
     weak var delegate: CategoryCellDelegate?
 
     // MARK: - Lifecycle
@@ -77,9 +76,10 @@ class CategoryCell: UITableViewCell {
     // MARK: - Configure Cell
 
     func configureCell(category: String) {
-        if conductor.device == .phone {
-            categoryLabel.font = UIFont(name: "Avenir Next", size: 14)
-        }
+        // TODO
+//        if conductor.device == .phone {
+//            categoryLabel.font = UIFont(name: "Avenir Next", size: 14)
+//        }
         currentCategory = category
         categoryLabel?.text = "\(category)"
     }

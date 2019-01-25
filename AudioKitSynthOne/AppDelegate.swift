@@ -9,10 +9,14 @@
 import UIKit
 import OneSignal
 
+class Global {
+    static let conductor: Conductor = Conductor()
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let conductor = Conductor.sharedInstance
+    let conductor = Global.conductor
     var window: UIWindow?
 
     func application(_ application: UIApplication,

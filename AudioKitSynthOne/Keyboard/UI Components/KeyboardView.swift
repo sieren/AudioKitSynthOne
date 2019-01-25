@@ -22,6 +22,8 @@ public protocol AKKeyboardDelegate: class {
 /// Clickable keyboard mainly used for AudioKit playgrounds
 @IBDesignable open class KeyboardView: UIView, AKMIDIListener {
 
+    var conductor: Conductor!
+
     /// Number of octaves displayed at once
     @IBInspectable open var octaveCount: Int = 2
 
@@ -82,11 +84,11 @@ public protocol AKKeyboardDelegate: class {
     }
 
     private var arpIsOn: Bool {
-        return Conductor.sharedInstance.synth.getSynthParameter(.arpIsOn) > 0 ? true : false
+        return conductor.synth.getSynthParameter(.arpIsOn) > 0 ? true : false
     }
 
     private var arpIsSequencer: Bool {
-        return Conductor.sharedInstance.synth.getSynthParameter(.arpIsSequencer) > 0 ? true : false
+        return conductor.synth.getSynthParameter(.arpIsSequencer) > 0 ? true : false
     }
 
     let naturalNotes = ["C", "D", "E", "F", "G", "A", "B"]

@@ -283,8 +283,9 @@ class Tunings {
         b.selectedTuningIndex = 0
         let tuning = b.tunings[b.selectedTuningIndex]
         _ = AKPolyphonicNode.tuningTable.tuningTable(fromFrequencies: tuning.masterSet)
-        let f = Conductor.sharedInstance.synth!.getDefault(.frequencyA4)
-        Conductor.sharedInstance.synth!.setSynthParameter(.frequencyA4, f)
+        //TODO
+//        let f = conductor.synth!.getDefault(.frequencyA4)
+//        conductor.synth!.setSynthParameter(.frequencyA4, f)
         tuningsDelegate?.tuningDidChange()
     }
 

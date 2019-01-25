@@ -63,10 +63,10 @@ class TuningsPanelController: PanelController {
         tuningBankTableView.delegate = self
         tuningBankTableView.accessibilityLabel = "Tuning Banks Table"
 
-        if let synth = Conductor.sharedInstance.synth {
+        if let synth = conductor.synth {
             masterTuningKnob.range = synth.getRange(.frequencyA4)
             masterTuningKnob.value = synth.getSynthParameter(.frequencyA4)
-            Conductor.sharedInstance.bind(masterTuningKnob, to: .frequencyA4)
+            conductor.bind(masterTuningKnob, to: .frequencyA4)
 
             resetTuningsButton.callback = { value in
                 if value == 1 {

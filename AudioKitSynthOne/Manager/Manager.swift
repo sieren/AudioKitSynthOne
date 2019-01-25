@@ -115,14 +115,18 @@ public class Manager: UpdatableViewController {
         let tuningsStoryboard = UIStoryboard(name: "Tunings", bundle: Bundle.main)
         var vcName = ChildPanel.tunings.identifier()
         if conductor.device == .phone { vcName = "iPhone" + vcName }
-        return tuningsStoryboard.instantiateViewController(withIdentifier: vcName) as! TuningsPanelController
+        let poo = tuningsStoryboard.instantiateViewController(withIdentifier: vcName) as! TuningsPanelController
+        poo.conductor = conductor
+        return poo
     }()
 
     lazy var presetsViewController: PresetsViewController = {
         let presetsStoryboard = UIStoryboard(name: "Presets", bundle: Bundle.main)
         var vcName = "Presets"
         if conductor.device == .phone { vcName = "iPhone" + vcName }
-        return presetsStoryboard.instantiateViewController(withIdentifier: vcName) as! PresetsViewController
+        let poo =  presetsStoryboard.instantiateViewController(withIdentifier: vcName) as! PresetsViewController
+        poo.conductor = conductor
+        return poo
     }()
 
     // swiftlint:enable force_cast
@@ -131,9 +135,15 @@ public class Manager: UpdatableViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Conductor start
+
+        if conductor == nil {
+            conductor = Global.conductor
+        }
         conductor.start()
+
+        let poo = children.first(where: { type(of: $0) == HeaderViewController.self }) as! HeaderViewController
+        poo.conductor = conductor
+
         sustainer = SDSustainer(conductor.synth)
 
         keyboardView?.delegate = self
@@ -167,7 +177,7 @@ public class Manager: UpdatableViewController {
         DispatchQueue.global(qos: .userInteractive).async {
             AudioKit.midi.createVirtualInputPort(95_433, name: "AudioKit Synth One")
             AudioKit.midi.openInput()
-            AudioKit.midi.openOutput("AudioKit Synth One")
+            AudioKit.midi.openOutput(name: "AudioKit Synth One")
         }
         AudioKit.midi.addListener(self)
 
@@ -181,8 +191,11 @@ public class Manager: UpdatableViewController {
         switchToChildPanel(.generators, isOnTop: true)
         
         // Pre-load dev panel view
+        devViewController.conductor = conductor
         add(asChildViewController: devViewController, isTopContainer: true)
         devViewController.view.removeFromSuperview()
+
+        presetsViewController.children
 
         // IAA MIDI
         var callbackStruct = AudioOutputUnitMIDICallbacks(
@@ -211,7 +224,8 @@ public class Manager: UpdatableViewController {
         }
 
         // Setup AudioBus MIDI Input
-        setupAudioBusInput()
+        //TODO
+        //setupAudioBusInput()
 
 		holdButton.accessibilityValue = self.keyboardView.holdMode ?
 			NSLocalizedString("On", comment: "On") :
@@ -362,7 +376,7 @@ public class Manager: UpdatableViewController {
 
         // Even though isMono is a dsp parameter it needs special treatment because this vc's state depends on it
         guard let s = conductor.synth else {
-            AKLog("ParentViewController can't update global UI because synth is not instantiated")
+            AKLog("Manager can't update global UI because synth is not instantiated")
             return
         }
         let isMono = s.getSynthParameter(.isMono)

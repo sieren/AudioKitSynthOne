@@ -75,17 +75,18 @@ extension VerticalSlider {
     }
 
     func setupView() {
-        if Conductor.sharedInstance.device == .phone {
-            knobSize = CGSize(width: 34, height: 17)
-        }
+        //TODO
+//        if conductor.device == .phone {
+//            knobSize = CGSize(width: 34, height: 17)
+//        }
         knobRect = CGRect(x: 0, y: sliderY, width: knobSize.width, height: knobSize.height)
       
-        if Conductor.sharedInstance.device == .phone {
-            barLength = bounds.height - 8
-            barMargin = -5
-        } else {
+//        if conductor.device == .phone {
+//            barLength = bounds.height - 8
+//            barMargin = -5
+//        } else {
             barLength = bounds.height - (barMargin * 2)
-        }
+//        }
     }
 
     override func draw(_ rect: CGRect) {

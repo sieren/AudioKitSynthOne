@@ -150,9 +150,12 @@ extension PresetsViewController {
 
     func selectCategory(_ newIndex: Int) {
         guard let categoriesVC = self.children.first as? PresetsCategoriesViewController else { return }
-        categoriesVC.categoryTableView.selectRow(at: IndexPath(row: newIndex, section: 0),
-                                                 animated: false,
-                                                 scrollPosition: .top)
+        categoriesVC.conductor = conductor
+        categoriesVC.updateChoices()
+        //TODO
+//        categoriesVC.categoryTableView.selectRow(at: IndexPath(row: newIndex, section: 0),
+//                                                 animated: false,
+//                                                 scrollPosition: .top)
     }
 
     func updateCategoryTable() {
@@ -180,7 +183,7 @@ extension PresetsViewController {
         }
 
         // Update all UI
-        Conductor.sharedInstance.updateAllUI()
+        conductor.updateAllUI()
     }
 
     func deselectCurrentRow() {
@@ -345,10 +348,11 @@ extension PresetsViewController {
         let presetsInBank = presets.filter { $0.bank == currentBank.name }.sorted { $0.position < $1.position }
 
         // Smoothly cycle through presets if MIDI input is greater than preset count
-        let currentPresetIndex = index % (presetsInBank.count)
+        //TODO
+//        let currentPresetIndex = index % (presetsInBank.count)
 
-        currentPreset = presetsInBank[currentPresetIndex]
-        selectCurrentPreset()
+//        currentPreset = presetsInBank[currentPresetIndex]
+//        selectCurrentPreset()
     }
 
     // Used for Selecting Bank from MIDI msb (cc0)

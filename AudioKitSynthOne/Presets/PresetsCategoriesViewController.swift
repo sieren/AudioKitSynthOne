@@ -50,7 +50,7 @@ protocol CategoryDelegate: AnyObject {
 
 // MARK: - PresetsCategoriesController
 
-class PresetsCategoriesViewController: UIViewController {
+class PresetsCategoriesViewController: ConductorAwareViewController {
 
     @IBOutlet weak var categoryTableView: UITableView!
     weak var categoryDelegate: CategoryDelegate?
@@ -61,16 +61,15 @@ class PresetsCategoriesViewController: UIViewController {
         }
     }
 
-    let conductor = Conductor.sharedInstance
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         categoryTableView.separatorColor = #colorLiteral(red: 0.3058823529, green: 0.3058823529, blue: 0.3254901961, alpha: 1)
 
+        //TODO
         // Create table data source
-        updateChoices()
+//        updateChoices()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -95,9 +94,10 @@ class PresetsCategoriesViewController: UIViewController {
         choices[PresetCategory.categoryCount + 2] = "Favorites"
 
         // Add Banks to Table
-        for bank in conductor.banks {
-            choices[PresetCategory.bankStartingIndex + bank.position] = "⌾ \(bank.name)"
-        }
+        //TODO
+//        for bank in conductor.banks {
+//            choices[PresetCategory.bankStartingIndex + bank.position] = "⌾ \(bank.name)"
+//        }
     }
 }
 
