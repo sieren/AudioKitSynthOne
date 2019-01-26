@@ -6,6 +6,9 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+
+import UIKit
+
 /// Get the key of a dictionary from a value
 extension Dictionary where Value: Equatable {
     func getKey(forValue val: Value) -> Key? {

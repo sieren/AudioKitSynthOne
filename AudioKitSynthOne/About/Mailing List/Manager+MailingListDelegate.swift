@@ -8,6 +8,8 @@
 
 // Mailing List PopOver Delegate
 
+import Foundation
+
 extension Manager: MailingListDelegate {
   
     func didSignMailingList(email: String) {

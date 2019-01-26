@@ -6,6 +6,8 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+import UIKit
+
 extension PresetsViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,20 +32,22 @@ extension PresetsViewController: UITableViewDataSource {
         // Get current preset
         let preset = sortedPresets[(indexPath as NSIndexPath).row]
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PresetCell") as? PresetCell {
-
-            cell.delegate = self
-            
-            var alphabetical = false
-            if categoryIndex == PresetCategory.categoryCount + 1 { alphabetical = true }
-
-            // Cell updated in PresetCell.swift
-            cell.configureCell(preset: preset, alpha: alphabetical)
-
-            return cell
-
+        var cell: PresetCell
+        if let pcell = tableView.dequeueReusableCell(withIdentifier: "PresetCell") as? PresetCell {
+            cell = pcell
         } else {
-            return PresetCell()
+            cell = PresetCell()
         }
+
+        cell.conductor = conductor
+        cell.delegate = self
+
+        var alphabetical = false
+        if categoryIndex == PresetCategory.categoryCount + 1 { alphabetical = true }
+
+        // Cell updated in PresetCell.swift
+        cell.configureCell(preset: preset, alpha: alphabetical)
+
+        return cell
     }
 }

@@ -8,15 +8,18 @@
 
 // Header Delegate
 
+import AudioKit
+
 extension Manager: HeaderDelegate {
 
     func displayLabelTapped() {
         if !isPresetsDisplayed {
 
             // Hide Keyboard
-            keyboardView.isShown = keyboardToggle.isOn
-            keyboardToggle.callback(0.0)
-            keyboardToggle.value = 0.0
+            //TODO
+//            keyboardView.isShown = keyboardToggle.isOn
+//            keyboardToggle.callback(0.0)
+//            keyboardToggle.value = 0.0
 
             // Save previous panels
             if self.conductor.device == .pad {
@@ -51,14 +54,15 @@ extension Manager: HeaderDelegate {
         } else {
 
             // Show Keyboard
-            if keyboardView.isShown {
-                keyboardToggle.value = 1.0
-                if self.conductor.device == .pad {
-                    keyboardTopConstraint.constant = 337
-                }
-                keyboardToggle.setTitle("Hide", for: .normal)
-            }
-            
+//TODO
+//            if keyboardView.isShown {
+//                keyboardToggle.value = 1.0
+//                if self.conductor.device == .pad {
+//                    keyboardTopConstraint.constant = 337
+//                }
+//                keyboardToggle.setTitle("Hide", for: .normal)
+//            }
+
             if conductor.device == .phone {
                 switchToChildPanel(prevBottomChildPanel!, isOnTop: true)
             }
@@ -151,7 +155,8 @@ extension Manager: HeaderDelegate {
         // conductor.synth.resetDSP() // nuclear panic option
 
         // Turn off held notes on keybaord
-        keyboardView.allNotesOff()
+        //TODO
+//        keyboardView.allNotesOff()
 
         let title = NSLocalizedString("Midi Panic", comment: "Alert Title: MIDI Panic")
         let message = NSLocalizedString("All notes have been turned off.", comment: "Alert Message: MIDI Panic")

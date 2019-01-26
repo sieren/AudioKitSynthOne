@@ -8,6 +8,8 @@
 
 // Keyboard Pop Over Delegate
 
+import AudioKit
+
 extension Manager: KeyboardPopOverDelegate {
 
     func didFinishSelecting(octaveRange: Int, labelMode: Int, darkMode: Bool) {

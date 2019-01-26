@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioKit
 
 protocol ModWheelDelegate: AnyObject {
     func didSelectRouting(newDestination: Int)

@@ -123,7 +123,7 @@ class Tunings {
             let jsonArray = try JSONDecoder().decode([TuningBank].self, from: tuningBankData)
             tuningBanks.append(contentsOf: jsonArray)
         } catch let error as NSError {
-            AKLog("*** error loading tuning banks from device: \(error)")
+            AKLog("*** error loading \(tuningFilenameV1) from device: \(error)")
         }
     }
 

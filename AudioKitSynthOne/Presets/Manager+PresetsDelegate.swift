@@ -8,6 +8,8 @@
 
 // Presets Delegate
 
+import Foundation
+
 extension Manager: PresetsDelegate {
 
     func presetDidChange(_ newActivePreset: Preset) {
@@ -35,8 +37,9 @@ extension Manager: PresetsDelegate {
         // UI Updates for non-bound controls
         DispatchQueue.main.async {
             // Octave position
-            self.keyboardView.firstOctave = self.activePreset.octavePosition + 2
-            self.octaveStepper.value = Double(self.activePreset.octavePosition)
+            //TODO
+            //self.keyboardView.firstOctave = self.activePreset.octavePosition + 2
+            //self.octaveStepper.value = Double(self.activePreset.octavePosition)
         }
 
         // Save Current Preset

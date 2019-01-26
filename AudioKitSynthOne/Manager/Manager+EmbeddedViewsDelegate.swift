@@ -8,6 +8,8 @@
 
 // Embedded Views Delegate
 
+import Foundation
+
 extension Manager: EmbeddedViewsDelegate {
 
     func switchToChildPanel(_ newView: ChildPanel, isOnTop: Bool = true) {

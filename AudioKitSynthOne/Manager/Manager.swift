@@ -7,6 +7,8 @@
 //
 
 import AudioKit
+import AudioKitUI
+
 import UIKit
 import Disk 
 
@@ -64,7 +66,8 @@ public class Manager: UpdatableViewController {
 
     // AudioBus
     private var audioUnitPropertyListener: AudioUnitPropertyListener!
-    var midiInput: ABMIDIReceiverPort?
+    //TODO
+//    var midiInput: ABMIDIReceiverPort?
 
     // MARK: - Define child view controllers
     lazy var envelopesPanel: EnvelopesPanelController = {
@@ -146,18 +149,19 @@ public class Manager: UpdatableViewController {
 
         sustainer = SDSustainer(conductor.synth)
 
-        keyboardView?.delegate = self
-        keyboardView?.polyphonicMode = conductor.synth.getSynthParameter(.isMono) < 1 ? true : false
-
         // Set Header as Delegate
         if let headerVC = self.children.first as? HeaderViewController {
             headerVC.delegate = self
             headerVC.headerDelegate = self
         }
-
-        // Set AKKeyboard octave range
-        octaveStepper.minValue = -2
-        octaveStepper.maxValue = 4
+//TODO
+//        keyboardView?.conductor = conductor
+//        keyboardView?.delegate = self
+//        keyboardView?.polyphonicMode = conductor.synth.getSynthParameter(.isMono) < 1 ? true : false
+//
+//        // Set AKKeyboard octave range
+//        octaveStepper.minValue = -2
+//        octaveStepper.maxValue = 4
 
         // Make bluetooth button look pretty
         bluetoothButton.centerPopupIn(view: view)
@@ -169,17 +173,20 @@ public class Manager: UpdatableViewController {
         #endif
 
         // Setup Callbacks
-        setupCallbacks()
+        //TODO
+//        setupCallbacks()
 
         // Load Presets
         displayPresetsController()
 
         DispatchQueue.global(qos: .userInteractive).async {
+            AKLog("starting midi")
             AudioKit.midi.createVirtualInputPort(95_433, name: "AudioKit Synth One")
             AudioKit.midi.openInput()
             AudioKit.midi.openOutput(name: "AudioKit Synth One")
         }
-        AudioKit.midi.addListener(self)
+        //TODO
+//        AudioKit.midi.addListener(self)
 
         // Pre-load views and Set initial subviews
         switchToChildPanel(.effects, isOnTop: true)
@@ -227,13 +234,14 @@ public class Manager: UpdatableViewController {
         //TODO
         //setupAudioBusInput()
 
-		holdButton.accessibilityValue = self.keyboardView.holdMode ?
-			NSLocalizedString("On", comment: "On") :
-			NSLocalizedString("Off", comment: "Off")
-
-		monoButton.accessibilityValue = self.keyboardView.polyphonicMode ?
-			NSLocalizedString("Off", comment: "Off") :
-			NSLocalizedString("On", comment: "On")
+        //TODO
+//        holdButton.accessibilityValue = self.keyboardView.holdMode ?
+//            NSLocalizedString("On", comment: "On") :
+//            NSLocalizedString("Off", comment: "Off")
+//
+//        monoButton.accessibilityValue = self.keyboardView.polyphonicMode ?
+//            NSLocalizedString("Off", comment: "Off") :
+//            NSLocalizedString("On", comment: "On")
         
         isPhoneX = max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) >= 812 && conductor.device == .phone
         if isPhoneX {

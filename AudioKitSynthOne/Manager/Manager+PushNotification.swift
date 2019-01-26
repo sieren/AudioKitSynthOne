@@ -8,6 +8,7 @@
 
 import Foundation
 import OneSignal
+import UIKit
 
 extension Manager {
 

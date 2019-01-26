@@ -6,6 +6,8 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+import UIKit
+
 /// View Navigation/Embed Helper Methods
 extension Manager {
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {

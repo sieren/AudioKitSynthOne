@@ -6,6 +6,8 @@
 //  Copyright © 2017 AudioKit. All rights reserved.
 //
 
+import Foundation
+
 /// Engine-related data that can be changed from the main thread.
 public struct ABLEngineData {
     /// Hardware output latency in HostTime

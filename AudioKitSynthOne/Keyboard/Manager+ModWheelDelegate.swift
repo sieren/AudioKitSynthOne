@@ -8,6 +8,8 @@
 
 // Mod Wheel Settings Pop Over Delegate
 
+import AudioKit
+
 extension Manager: ModWheelDelegate {
 
     func didSelectRouting(newDestination: Int) {

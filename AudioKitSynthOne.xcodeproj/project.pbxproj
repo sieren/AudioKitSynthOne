@@ -38,6 +38,7 @@
 		94E951351F3644E5009A8B00 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E951341F3644E5009A8B00 /* Rate.swift */; };
 		94F694C61F683D5D0061DA5E /* CallbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F694C51F683D5D0061DA5E /* CallbackButton.swift */; };
 		94FEFEC91F3150D00064EC09 /* SliderTransposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEFEC71F3150D00064EC09 /* SliderTransposeButton.swift */; };
+		A08A08F00E48AEF07FC2339E /* Pods_SynthOneAU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A0CB0E223C194EB0F415E /* Pods_SynthOneAU.framework */; };
 		A4B6DE5FB88EB0520C4F0937 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0076A913A8D9EB5B5A6C27 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		C432979120CB2AA00063F795 /* Presets+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979020CB2AA00063F795 /* Presets+UITextViewDelegate.swift */; };
 		C432979320CB2BB20063F795 /* Presets+LoadSaveManipulate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979220CB2BB20063F795 /* Presets+LoadSaveManipulate.swift */; };
@@ -186,6 +187,238 @@
 		EA388CFC210548460026C0C0 /* Dev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CFE210548460026C0C0 /* Dev.storyboard */; };
 		EA388D1C21071BD50026C0C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA388D1A21071BD50026C0C0 /* InfoPlist.strings */; };
 		EA388D1F21071BD50026C0C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA388D1D21071BD50026C0C0 /* Localizable.strings */; };
+		F472011F21FB00A2002700EB /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472011E21FB00A2002700EB /* AudioUnitViewController.swift */; };
+		F472012221FB00A2002700EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F472012021FB00A2002700EB /* MainInterface.storyboard */; };
+		F472012721FB00A2002700EB /* SynthOneAU.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F472011921FB00A2002700EB /* SynthOneAU.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F472012C21FB01D8002700EB /* SynthOneAUv3AudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472012B21FB01D8002700EB /* SynthOneAUv3AudioUnit.swift */; };
+		F472012D21FB024C002700EB /* Presets+BankPopOverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918320C7C79C00FD565A /* Presets+BankPopOverDelegate.swift */; };
+		F472012E21FB024C002700EB /* Presets+CategoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917F20C7C79C00FD565A /* Presets+CategoryDelegate.swift */; };
+		F472012F21FB024C002700EB /* Presets+PresetCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917E20C7C79C00FD565A /* Presets+PresetCellDelegate.swift */; };
+		F472013021FB024C002700EB /* Presets+PresetPopOverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918020C7C79C00FD565A /* Presets+PresetPopOverDelegate.swift */; };
+		F472013121FB024C002700EB /* Presets+UIDocumentPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918220C7C79C00FD565A /* Presets+UIDocumentPickerDelegate.swift */; };
+		F472013221FB024C002700EB /* Presets+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918120C7C79C00FD565A /* Presets+UITableViewDataSource.swift */; };
+		F472013321FB024C002700EB /* Presets+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918420C7C79C00FD565A /* Presets+UITableViewDelegate.swift */; };
+		F472013421FB024C002700EB /* Presets+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979020CB2AA00063F795 /* Presets+UITextViewDelegate.swift */; };
+		F472013521FB024C002700EB /* Presets+LoadSaveManipulate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979220CB2BB20063F795 /* Presets+LoadSaveManipulate.swift */; };
+		F472013621FB024C002700EB /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917D20C7C79C00FD565A /* PresetsViewController.swift */; };
+		F472013721FB0254002700EB /* BankA.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51B20C52D1700DAECCD /* BankA.json */; };
+		F472013821FB0254002700EB /* Brice Beasley.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51620C52D1700DAECCD /* Brice Beasley.json */; };
+		F472013921FB0254002700EB /* Bonus.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51820C52D1700DAECCD /* Bonus.json */; };
+		F472013A21FB0254002700EB /* DJ Puzzle.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51720C52D1700DAECCD /* DJ Puzzle.json */; };
+		F472013B21FB0254002700EB /* Electronisounds.json in Resources */ = {isa = PBXBuildFile; fileRef = 94985FF220D8899300D71239 /* Electronisounds.json */; };
+		F472013C21FB0254002700EB /* Francis Preve.json in Resources */ = {isa = PBXBuildFile; fileRef = 94D2AF2621EE57AA006E2312 /* Francis Preve.json */; };
+		F472013D21FB0254002700EB /* JEC.json in Resources */ = {isa = PBXBuildFile; fileRef = 94985FF420D8908500D71239 /* JEC.json */; };
+		F472013E21FB0254002700EB /* Red Sky Lullaby.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51A20C52D1700DAECCD /* Red Sky Lullaby.json */; };
+		F472013F21FB0254002700EB /* Sound of Izrael.json in Resources */ = {isa = PBXBuildFile; fileRef = 94D37DD320E06641002008A4 /* Sound of Izrael.json */; };
+		F472014021FB0254002700EB /* Starter Bank.json in Resources */ = {isa = PBXBuildFile; fileRef = 941752B920E2BD2E0076D953 /* Starter Bank.json */; };
+		F472014121FB0254002700EB /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = C435C51920C52D1700DAECCD /* User.json */; };
+		F472014221FB025E002700EB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C4F420C5234900DAECCD /* CategoryCell.swift */; };
+		F472014321FB025E002700EB /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C4F720C5234900DAECCD /* PresetCell.swift */; };
+		F472014421FB025E002700EB /* PresetUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB3FDF1FC8C0EA007F8081 /* PresetUIButton.swift */; };
+		F472014521FB025E002700EB /* String+CapitalizeFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946980562169258A007EAA5B /* String+CapitalizeFirst.swift */; };
+		F472014621FB027D002700EB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C50220C5286B00DAECCD /* Helpers.swift */; };
+		F472014721FB0280002700EB /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA090E4320F74B0A0012A8F7 /* Private.swift */; };
+		F472014821FB029C002700EB /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CE0210498AC0026C0C0 /* About.storyboard */; };
+		F472014921FB02A1002700EB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916220C7C72900FD565A /* AboutViewController.swift */; };
+		F472014A21FB02A1002700EB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916120C7C72900FD565A /* InfoViewController.swift */; };
+		F472014B21FB02A1002700EB /* MoreAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94189CB7219F27130004C28B /* MoreAppsController.swift */; };
+		F472014C21FB02AE002700EB /* MailingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CFB2104995B0026C0C0 /* MailingList.storyboard */; };
+		F472014D21FB02B2002700EB /* Manager+MailingListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4919620C7C81200FD565A /* Manager+MailingListDelegate.swift */; };
+		F472014E21FB02B2002700EB /* MailingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4919720C7C81200FD565A /* MailingListViewController.swift */; };
+		F472014F21FB02BA002700EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D193CE1F1187B500FF4FE4 /* Assets.xcassets */; };
+		F472015321FB02E2002700EB /* CallbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F694C51F683D5D0061DA5E /* CallbackButton.swift */; };
+		F472015421FB02E2002700EB /* SynthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948C54C21F3A57C600DA6081 /* SynthButton.swift */; };
+		F472015521FB02E2002700EB /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7ECAB1F2446960011B119 /* ToggleButton.swift */; };
+		F472015621FB02E2002700EB /* ToggleButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7ECA61F2446960011B119 /* ToggleButtonStyleKit.swift */; };
+		F472015721FB02E2002700EB /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947956B51F32A72400FE5D9B /* ToggleSwitch.swift */; };
+		F472015821FB02E2002700EB /* ToggleSwitchStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947956B21F32A70300FE5D9B /* ToggleSwitchStyleKit.swift */; };
+		F472015921FB02E2002700EB /* iPhoneToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479F20221E4F9CE003605B9 /* iPhoneToggleButton.swift */; };
+		F472015A21FB02E8002700EB /* KnobStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7ECAA1F2446960011B119 /* KnobStyleKit.swift */; };
+		F472015B21FB02E8002700EB /* Knob+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7ECA81F2446960011B119 /* Knob+Touches.swift */; };
+		F472015C21FB02E8002700EB /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7ECA91F2446960011B119 /* Knob.swift */; };
+		F472015D21FB02EE002700EB /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947956A81F329AB100FE5D9B /* Stepper.swift */; };
+		F472015E21FB02EE002700EB /* StepperStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947956A51F329AB100FE5D9B /* StepperStyleKit.swift */; };
+		F472015F21FB02F6002700EB /* Dev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CFE210548460026C0C0 /* Dev.storyboard */; };
+		F472016021FB02FD002700EB /* DevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917220C7C73A00FD565A /* DevViewController.swift */; };
+		F472016121FB02FD002700EB /* Manager+DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917120C7C73A00FD565A /* Manager+DevView.swift */; };
+		F472016221FB030C002700EB /* AKSynthOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C55420C530C900DAECCD /* AKSynthOne.swift */; };
+		F472016321FB030C002700EB /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C55120C530C900DAECCD /* Conductor.swift */; };
+		F472016421FB030C002700EB /* SDSustainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C55620C530C900DAECCD /* SDSustainer.swift */; };
+		F472016521FB0314002700EB /* bandlimitedWaveformFrequencies.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF72123CDE70093ADC8 /* bandlimitedWaveformFrequencies.json */; };
+		F472016621FB0314002700EB /* bandlimitedWaveforms.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC172123CDE70093ADC8 /* bandlimitedWaveforms.json */; };
+		F472016721FB031D002700EB /* triangle_0000.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1D2123CDE70093ADC8 /* triangle_0000.json */; };
+		F472016821FB031D002700EB /* triangle_0001.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC162123CDE70093ADC8 /* triangle_0001.json */; };
+		F472016921FB031D002700EB /* triangle_0002.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0E2123CDE70093ADC8 /* triangle_0002.json */; };
+		F472016A21FB031D002700EB /* triangle_0005.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFB2123CDE70093ADC8 /* triangle_0005.json */; };
+		F472016B21FB031D002700EB /* triangle_0010.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC242123CDE70093ADC8 /* triangle_0010.json */; };
+		F472016C21FB031D002700EB /* triangle_0021.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC192123CDE70093ADC8 /* triangle_0021.json */; };
+		F472016D21FB031D002700EB /* triangle_0042.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC052123CDE70093ADC8 /* triangle_0042.json */; };
+		F472016E21FB031D002700EB /* triangle_0084.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC272123CDE70093ADC8 /* triangle_0084.json */; };
+		F472016F21FB031D002700EB /* triangle_0168.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC122123CDE70093ADC8 /* triangle_0168.json */; };
+		F472017021FB031D002700EB /* triangle_0337.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC042123CDE70093ADC8 /* triangle_0337.json */; };
+		F472017121FB031D002700EB /* triangle_0674.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF62123CDE70093ADC8 /* triangle_0674.json */; };
+		F472017221FB031D002700EB /* triangle_1348.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1B2123CDE70093ADC8 /* triangle_1348.json */; };
+		F472017321FB031D002700EB /* triangle_2696.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC072123CDE70093ADC8 /* triangle_2696.json */; };
+		F472017421FB0324002700EB /* pwm_0000.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF82123CDE70093ADC8 /* pwm_0000.json */; };
+		F472017521FB0324002700EB /* pwm_0001.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC022123CDE70093ADC8 /* pwm_0001.json */; };
+		F472017621FB0324002700EB /* pwm_0002.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC202123CDE70093ADC8 /* pwm_0002.json */; };
+		F472017721FB0324002700EB /* pwm_0005.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1C2123CDE70093ADC8 /* pwm_0005.json */; };
+		F472017821FB0324002700EB /* pwm_0010.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0B2123CDE70093ADC8 /* pwm_0010.json */; };
+		F472017921FB0324002700EB /* pwm_0021.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFF2123CDE70093ADC8 /* pwm_0021.json */; };
+		F472017A21FB0324002700EB /* pwm_0042.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC2B2123CDE70093ADC8 /* pwm_0042.json */; };
+		F472017B21FB0324002700EB /* pwm_0084.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC092123CDE70093ADC8 /* pwm_0084.json */; };
+		F472017C21FB0324002700EB /* pwm_0168.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC032123CDE70093ADC8 /* pwm_0168.json */; };
+		F472017D21FB0324002700EB /* pwm_0337.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC102123CDE70093ADC8 /* pwm_0337.json */; };
+		F472017E21FB0324002700EB /* pwm_0674.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1F2123CDE70093ADC8 /* pwm_0674.json */; };
+		F472017F21FB0324002700EB /* pwm_1348.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFD2123CDE70093ADC8 /* pwm_1348.json */; };
+		F472018021FB0324002700EB /* pwm_2696.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC282123CDE70093ADC8 /* pwm_2696.json */; };
+		F472018121FB032C002700EB /* square_0000.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1E2123CDE70093ADC8 /* square_0000.json */; };
+		F472018221FB032C002700EB /* square_0001.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC112123CDE70093ADC8 /* square_0001.json */; };
+		F472018321FB032C002700EB /* square_0002.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0D2123CDE70093ADC8 /* square_0002.json */; };
+		F472018421FB032C002700EB /* square_0005.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFC2123CDE70093ADC8 /* square_0005.json */; };
+		F472018521FB032C002700EB /* square_0010.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC262123CDE70093ADC8 /* square_0010.json */; };
+		F472018621FB032C002700EB /* square_0021.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC1A2123CDE70093ADC8 /* square_0021.json */; };
+		F472018721FB032C002700EB /* square_0042.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC082123CDE70093ADC8 /* square_0042.json */; };
+		F472018821FB032C002700EB /* square_0084.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC232123CDE70093ADC8 /* square_0084.json */; };
+		F472018921FB032C002700EB /* square_0168.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC152123CDE70093ADC8 /* square_0168.json */; };
+		F472018A21FB032C002700EB /* square_0337.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC012123CDE70093ADC8 /* square_0337.json */; };
+		F472018B21FB032C002700EB /* square_0674.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF92123CDE70093ADC8 /* square_0674.json */; };
+		F472018C21FB032C002700EB /* square_1348.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC182123CDE70093ADC8 /* square_1348.json */; };
+		F472018D21FB032C002700EB /* square_2696.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC062123CDE70093ADC8 /* square_2696.json */; };
+		F472018E21FB0332002700EB /* sawtooth_0000.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC212123CDE70093ADC8 /* sawtooth_0000.json */; };
+		F472018F21FB0332002700EB /* sawtooth_0001.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC222123CDE70093ADC8 /* sawtooth_0001.json */; };
+		F472019021FB0332002700EB /* sawtooth_0002.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFA2123CDE70093ADC8 /* sawtooth_0002.json */; };
+		F472019121FB0332002700EB /* sawtooth_0005.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0F2123CDE70093ADC8 /* sawtooth_0005.json */; };
+		F472019221FB0332002700EB /* sawtooth_0010.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC142123CDE70093ADC8 /* sawtooth_0010.json */; };
+		F472019321FB0332002700EB /* sawtooth_0021.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC2A2123CDE70093ADC8 /* sawtooth_0021.json */; };
+		F472019421FB0332002700EB /* sawtooth_0042.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC002123CDE70093ADC8 /* sawtooth_0042.json */; };
+		F472019521FB0332002700EB /* sawtooth_0084.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC132123CDE70093ADC8 /* sawtooth_0084.json */; };
+		F472019621FB0332002700EB /* sawtooth_0168.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC252123CDE70093ADC8 /* sawtooth_0168.json */; };
+		F472019721FB0332002700EB /* sawtooth_0337.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0A2123CDE70093ADC8 /* sawtooth_0337.json */; };
+		F472019821FB0332002700EB /* sawtooth_0674.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC0C2123CDE70093ADC8 /* sawtooth_0674.json */; };
+		F472019921FB0332002700EB /* sawtooth_1348.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CC292123CDE70093ADC8 /* sawtooth_1348.json */; };
+		F472019A21FB0332002700EB /* sawtooth_2696.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBFE2123CDE70093ADC8 /* sawtooth_2696.json */; };
+		F472019B21FB0339002700EB /* S1AudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = C435C57020C530C900DAECCD /* S1AudioUnit.mm */; };
+		F472019C21FB034F002700EB /* S1DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = C435C57620C530C900DAECCD /* S1DSPKernel.mm */; };
+		F472019D21FB034F002700EB /* S1DSPKernel+destroy.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490E520C649D900FD565A /* S1DSPKernel+destroy.mm */; };
+		F472019E21FB034F002700EB /* S1DSPKernel+didChanges.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490EE20C64E5600FD565A /* S1DSPKernel+didChanges.mm */; };
+		F472019F21FB034F002700EB /* S1DSPKernel+getSetDependentParameters.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490EC20C64D8C00FD565A /* S1DSPKernel+getSetDependentParameters.mm */; };
+		F47201A021FB034F002700EB /* S1DSPKernel+getSetSynthParameters.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490EA20C64C8E00FD565A /* S1DSPKernel+getSetSynthParameters.mm */; };
+		F47201A121FB034F002700EB /* S1DSPKernel+MIDI.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490E820C64AC600FD565A /* S1DSPKernel+MIDI.mm */; };
+		F47201A221FB034F002700EB /* S1DSPKernel+parameters.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490F420C6542500FD565A /* S1DSPKernel+parameters.mm */; };
+		F47201A321FB034F002700EB /* S1DSPKernel+process.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490F220C6539200FD565A /* S1DSPKernel+process.mm */; };
+		F47201A421FB034F002700EB /* S1DSPKernel+reset.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490F620C654E600FD565A /* S1DSPKernel+reset.mm */; };
+		F47201A521FB034F002700EB /* S1DSPKernel+setup.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490F820C655AF00FD565A /* S1DSPKernel+setup.mm */; };
+		F47201A621FB034F002700EB /* S1DSPKernel+startStopNotes.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490FA20C6560000FD565A /* S1DSPKernel+startStopNotes.mm */; };
+		F47201A721FB034F002700EB /* S1DSPKernel+tapers.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490F020C64ED200FD565A /* S1DSPKernel+tapers.mm */; };
+		F47201A821FB034F002700EB /* S1DSPKernel+toggleKeys.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4B490FC20C6564D00FD565A /* S1DSPKernel+toggleKeys.mm */; };
+		F47201A921FB0356002700EB /* S1NoteState.mm in Sources */ = {isa = PBXBuildFile; fileRef = C435C56D20C530C900DAECCD /* S1NoteState.mm */; };
+		F47201AA21FB036D002700EB /* AEWeakRetainingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C55820C530C900DAECCD /* AEWeakRetainingProxy.m */; };
+		F47201AB21FB036D002700EB /* AEMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C55920C530C900DAECCD /* AEMessageQueue.m */; };
+		F47201AC21FB036D002700EB /* AEManagedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C55A20C530C900DAECCD /* AEManagedValue.m */; };
+		F47201AD21FB036D002700EB /* AEArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C55D20C530C900DAECCD /* AEArray.m */; };
+		F47201AE21FB036D002700EB /* AEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C55F20C530C900DAECCD /* AEUtilities.m */; };
+		F47201AF21FB036D002700EB /* AETime.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C56420C530C900DAECCD /* AETime.m */; };
+		F47201B021FB036D002700EB /* AETypes.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C56620C530C900DAECCD /* AETypes.m */; };
+		F47201B121FB036D002700EB /* AEMainThreadEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C56720C530C900DAECCD /* AEMainThreadEndpoint.m */; };
+		F47201B221FB036D002700EB /* AEAudioThreadEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C435C56920C530C900DAECCD /* AEAudioThreadEndpoint.m */; };
+		F47201B321FB0375002700EB /* Effects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CE6210498E90026C0C0 /* Effects.storyboard */; };
+		F47201B421FB037A002700EB /* EffectsPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491A320C7C94E00FD565A /* EffectsPanelController.swift */; };
+		F47201B521FB0381002700EB /* LFOWavePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491AB20C7D10200FD565A /* LFOWavePicker.swift */; };
+		F47201B621FB0381002700EB /* LFOPickerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491C120C7DF2A00FD565A /* LFOPickerStyleKit.swift */; };
+		F47201B721FB0381002700EB /* LFOButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949D93B61F2C188B007E657B /* LFOButtonStyleKit.swift */; };
+		F47201B821FB0381002700EB /* LFOToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949D93B51F2C188B007E657B /* LFOToggle.swift */; };
+		F47201B921FB0387002700EB /* EnvelopesPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491A020C7C91900FD565A /* EnvelopesPanelController.swift */; };
+		F47201BA21FB038C002700EB /* Envelopes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CF52104991C0026C0C0 /* Envelopes.storyboard */; };
+		F47201BB21FB0393002700EB /* Generators.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CF8210499530026C0C0 /* Generators.storyboard */; };
+		F47201BC21FB0398002700EB /* GeneratorsPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491A620C7C95900FD565A /* GeneratorsPanelController.swift */; };
+		F47201BD21FB039F002700EB /* FilterTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948D33A81F4DFC08006E8276 /* FilterTypeButton.swift */; };
+		F47201BE21FB039F002700EB /* FlatToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D917AE1F550D28006ACB4E /* FlatToggleButton.swift */; };
+		F47201BF21FB039F002700EB /* MorphSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491A820C7D10200FD565A /* MorphSelector.swift */; };
+		F47201C021FB03A7002700EB /* FlatToggleButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D917AB1F550D0D006ACB4E /* FlatToggleButtonStyleKit.swift */; };
+		F47201C121FB03A7002700EB /* MorphSelectorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491C020C7DF2A00FD565A /* MorphSelectorStyleKit.swift */; };
+		F47201C221FB03A7002700EB /* TopUIButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479F20421E4FB05003605B9 /* TopUIButtonStyleKit.swift */; };
+		F47201C321FB03AF002700EB /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CE3210498DD0026C0C0 /* Header.storyboard */; };
+		F47201C421FB03B4002700EB /* HeaderNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917720C7C75500FD565A /* HeaderNavButton.swift */; };
+		F47201C521FB03B4002700EB /* HeaderViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917820C7C75500FD565A /* HeaderViewContoller.swift */; };
+		F47201C621FB03B4002700EB /* Manager+HeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4917620C7C75500FD565A /* Manager+HeaderDelegate.swift */; };
+		F47201C721FB03BA002700EB /* KeyboardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4911A20C7C62A00FD565A /* KeyboardSettingsViewController.swift */; };
+		F47201C821FB03BA002700EB /* Manager+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4911720C7C62A00FD565A /* Manager+Keyboard.swift */; };
+		F47201C921FB03BA002700EB /* Manager+ModWheelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4919A20C7C8C800FD565A /* Manager+ModWheelDelegate.swift */; };
+		F47201CA21FB03BA002700EB /* WheelSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4911B20C7C62A00FD565A /* WheelSettingsViewController.swift */; };
+		F47201CB21FB03C0002700EB /* BlackKeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4911920C7C62A00FD565A /* BlackKeyStyleKit.swift */; };
+		F47201CC21FB03C0002700EB /* KeyboardShowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94656AEC205F410900634B2C /* KeyboardShowButton.swift */; };
+		F47201CD21FB03C0002700EB /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4911820C7C62A00FD565A /* KeyboardView.swift */; };
+		F47201CE21FB03C0002700EB /* ModWheelStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4912120C7C65000FD565A /* ModWheelStyleKit.swift */; };
+		F47201CF21FB03FB002700EB /* ABLLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A13AD20FC4C7C009E2B30 /* ABLLinkManager.swift */; };
+		F47201D021FB03FB002700EB /* LinkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF29B21016A0E000AB3FD /* LinkExtensions.swift */; };
+		F47201D121FB0409002700EB /* ChannelStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5039C1FF2F6E30097D37C /* ChannelStepper.swift */; };
+		F47201D221FB0409002700EB /* MIDICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C4F520C5234900DAECCD /* MIDICell.swift */; };
+		F47201D321FB0409002700EB /* MIDIInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52720C52D2E00DAECCD /* MIDIInput.swift */; };
+		F47201D421FB0409002700EB /* MIDIKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491B020C7D11500FD565A /* MIDIKnob.swift */; };
+		F47201D521FB040A002700EB /* MIDILearnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52820C52D2E00DAECCD /* MIDILearnable.swift */; };
+		F47201D621FB040A002700EB /* MIDISettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4914D20C7C6FC00FD565A /* MIDISettingsViewController.swift */; };
+		F47201D721FB040A002700EB /* Manager+MIDIListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4914C20C7C6FC00FD565A /* Manager+MIDIListener.swift */; };
+		F47201D821FB040A002700EB /* Manager+MIDISettingsPopOverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4914E20C7C6FC00FD565A /* Manager+MIDISettingsPopOverDelegate.swift */; };
+		F47201D921FB0410002700EB /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916520C7C72900FD565A /* Manager.swift */; };
+		F47201DA21FB0410002700EB /* Manager+callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979420CB2D620063F795 /* Manager+callbacks.swift */; };
+		F47201DB21FB0410002700EB /* Manager+EmbeddedViewsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916420C7C72900FD565A /* Manager+EmbeddedViewsDelegate.swift */; };
+		F47201DC21FB0410002700EB /* Manager+PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916620C7C72900FD565A /* Manager+PushNotification.swift */; };
+		F47201DD21FB0410002700EB /* UIViewController+DisplayAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915E20C7C72900FD565A /* UIViewController+DisplayAlert.swift */; };
+		F47201DE21FB0410002700EB /* UpdatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4916020C7C72900FD565A /* UpdatableViewController.swift */; };
+		F47201DF21FB0416002700EB /* ChildPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915F20C7C72900FD565A /* ChildPanel.swift */; };
+		F47201E021FB0416002700EB /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB18D11F37D879008368AE /* NavButton.swift */; };
+		F47201E121FB0416002700EB /* NavButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB18CE1F37D7ED008368AE /* NavButtonStyleKit.swift */; };
+		F47201E221FB0416002700EB /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915D20C7C72900FD565A /* PanelController.swift */; };
+		F47201E321FB0416002700EB /* Manager+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432979620CB2E090063F795 /* Manager+Navigation.swift */; };
+		F47201E421FB041D002700EB /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C51420C52D1700DAECCD /* Bank.swift */; };
+		F47201E521FB041D002700EB /* BankEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918F20C7C7B200FD565A /* BankEditorViewController.swift */; };
+		F47201E621FB041D002700EB /* Manager+PresetsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4918D20C7C7A400FD565A /* Manager+PresetsDelegate.swift */; };
+		F47201E721FB041D002700EB /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C51C20C52D1700DAECCD /* Preset.swift */; };
+		F47201E821FB041D002700EB /* PresetDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C51320C52D1700DAECCD /* PresetDataManager.swift */; };
+		F47201E921FB041D002700EB /* PresetEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4919220C7C7C500FD565A /* PresetEditorViewController.swift */; };
+		F47201EA21FB0423002700EB /* Presets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CE9210498F20026C0C0 /* Presets.storyboard */; };
+		F47201EB21FB0427002700EB /* PresetsCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4919120C7C7C500FD565A /* PresetsCategoriesViewController.swift */; };
+		F47201EC21FB0433002700EB /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E951341F3644E5009A8B00 /* Rate.swift */; };
+		F47201ED21FB043A002700EB /* Sequencer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CF2210499110026C0C0 /* Sequencer.storyboard */; };
+		F47201EE21FB043D002700EB /* SequencerPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4910420C7C5C500FD565A /* SequencerPanelController.swift */; };
+		F47201EF21FB0445002700EB /* ArpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4910220C7C5C500FD565A /* ArpButton.swift */; };
+		F47201F021FB0445002700EB /* ArpDirectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4910020C7C5C500FD565A /* ArpDirectionButton.swift */; };
+		F47201F121FB0445002700EB /* RateKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB3C21F36694300EF2F01 /* RateKnob.swift */; };
+		F47201F221FB0445002700EB /* SliderTransposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEFEC71F3150D00064EC09 /* SliderTransposeButton.swift */; };
+		F47201F321FB0445002700EB /* TempoStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491B320C7D19F00FD565A /* TempoStepper.swift */; };
+		F47201F421FB0445002700EB /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C3A0E1F31428B0086D58B /* VerticalSlider.swift */; };
+		F47201F521FB044B002700EB /* TempoStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491B720C7DEB100FD565A /* TempoStyleKit.swift */; };
+		F47201F621FB044B002700EB /* ArpButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491B820C7DEB100FD565A /* ArpButtonStyleKit.swift */; };
+		F47201F721FB044B002700EB /* SliderStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491B920C7DEB100FD565A /* SliderStyleKit.swift */; };
+		F47201F821FB044B002700EB /* ArpDirectionStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B491BA20C7DEB100FD565A /* ArpDirectionStyleKit.swift */; };
+		F47201F921FB0457002700EB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4910B20C7C5E400FD565A /* AppSettings.swift */; };
+		F47201FA21FB0457002700EB /* Manager+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4910C20C7C5E400FD565A /* Manager+AppSettings.swift */; };
+		F47201FB21FB045D002700EB /* TouchPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CEF210499070026C0C0 /* TouchPad.storyboard */; };
+		F47201FC21FB0460002700EB /* TouchPadPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4913920C7C69D00FD565A /* TouchPadPanelController.swift */; };
+		F47201FD21FB0467002700EB /* AKTouchPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4913620C7C69D00FD565A /* AKTouchPadView.swift */; };
+		F47201FE21FB0467002700EB /* AKVerticalPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4913720C7C69D00FD565A /* AKVerticalPad.swift */; };
+		F47201FF21FB0467002700EB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B4913820C7C69D00FD565A /* spark.png */; };
+		F472020021FB0467002700EB /* TouchPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4913B20C7C69D00FD565A /* TouchPoint.swift */; };
+		F472020121FB0467002700EB /* TouchPointStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4913A20C7C69D00FD565A /* TouchPointStyleKit.swift */; };
+		F472020221FB0471002700EB /* Tunings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52E20C52D4B00DAECCD /* Tunings.swift */; };
+		F472020321FB0471002700EB /* Tunings+UpgradePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9D9A221D6B13200B7C4E5 /* Tunings+UpgradePaths.swift */; };
+		F472020421FB0471002700EB /* Tunings+DefaultTunings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4D00821C87B9F005B2FAF /* Tunings+DefaultTunings.swift */; };
+		F472020521FB0471002700EB /* Tunings+Harmonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52F20C52D4B00DAECCD /* Tunings+Harmonic.swift */; };
+		F472020621FB0471002700EB /* Tunings+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52D20C52D4B00DAECCD /* Tunings+Math.swift */; };
+		F472020721FB0471002700EB /* Tuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C52C20C52D4B00DAECCD /* Tuning.swift */; };
+		F472020821FB0471002700EB /* TuningBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4D00321C5B9F2005B2FAF /* TuningBank.swift */; };
+		F472020921FB0471002700EB /* tunings_v0_upgrade_path_test.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E4D00521C81DB4005B2FAF /* tunings_v0_upgrade_path_test.json */; };
+		F472020A21FB0477002700EB /* Tunings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA388CEC210498FD0026C0C0 /* Tunings.storyboard */; };
+		F472020B21FB047F002700EB /* TuningsPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915720C7C70D00FD565A /* TuningsPanelController.swift */; };
+		F472020C21FB047F002700EB /* TuningsPanel+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915620C7C70D00FD565A /* TuningsPanel+UITableViewDataSource.swift */; };
+		F472020D21FB047F002700EB /* TuningsPanel+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915520C7C70D00FD565A /* TuningsPanel+UITableViewDelegate.swift */; };
+		F472020E21FB0484002700EB /* TuningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435C4F620C5234900DAECCD /* TuningCell.swift */; };
+		F472020F21FB0484002700EB /* TuningsPitchWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4915420C7C70D00FD565A /* TuningsPitchWheelView.swift */; };
+		F472021121FB0675002700EB /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472021021FB0675002700EB /* AudioKit.framework */; };
+		F472021321FB0675002700EB /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472021221FB0675002700EB /* AudioKitUI.framework */; };
+		F472021421FB0B95002700EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D193CB1F1187B500FF4FE4 /* Main.storyboard */; };
+		F472021521FB1207002700EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA388D1D21071BD50026C0C0 /* Localizable.strings */; };
 		F482CC2C2123CDE70093ADC8 /* triangle_0674.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF62123CDE70093ADC8 /* triangle_0674.json */; };
 		F482CC2D2123CDE70093ADC8 /* bandlimitedWaveformFrequencies.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF72123CDE70093ADC8 /* bandlimitedWaveformFrequencies.json */; };
 		F482CC2E2123CDE70093ADC8 /* pwm_0000.json in Resources */ = {isa = PBXBuildFile; fileRef = F482CBF82123CDE70093ADC8 /* pwm_0000.json */; };
@@ -256,6 +489,13 @@
 			remoteGlobalIDString = 941645C920B3597300D62851;
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
+		F472012521FB00A2002700EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4D193BC1F1187B500FF4FE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F472011821FB00A2002700EB;
+			remoteInfo = SynthOneAU;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -265,6 +505,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				F472012721FB00A2002700EB /* SynthOneAU.appex in Embed App Extensions */,
 				941645D120B3597300D62851 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -275,7 +516,9 @@
 /* Begin PBXFileReference section */
 		3A319653D44EC41DAFAEB963 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		45E1A7C3C54D27427C4A71B1 /* Pods_AKS1Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKS1Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A37384DD32DD2FB244D80D9 /* Pods-SynthOneAU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthOneAU.release.xcconfig"; path = "Pods/Target Support Files/Pods-SynthOneAU/Pods-SynthOneAU.release.xcconfig"; sourceTree = "<group>"; };
 		51EC225D22B5EE94B01AA474 /* Pods-AudioKitSynthOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioKitSynthOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioKitSynthOne/Pods-AudioKitSynthOne.debug.xcconfig"; sourceTree = "<group>"; };
+		531A1EF03D9FFA3888FEF923 /* Pods-SynthOneAU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthOneAU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SynthOneAU/Pods-SynthOneAU.debug.xcconfig"; sourceTree = "<group>"; };
 		5FAA47B316A5F659F440DAC9 /* Pods-AKS1Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKS1Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKS1Extension/Pods-AKS1Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		90231BFB16779C7C2CD6CB3F /* Pods-AKS1Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKS1Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKS1Extension/Pods-AKS1Extension.release.xcconfig"; sourceTree = "<group>"; };
 		9405503A210556C20039F101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -326,8 +569,6 @@
 		949D93B51F2C188B007E657B /* LFOToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFOToggle.swift; sourceTree = "<group>"; };
 		949D93B61F2C188B007E657B /* LFOButtonStyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFOButtonStyleKit.swift; sourceTree = "<group>"; };
 		94A5039C1FF2F6E30097D37C /* ChannelStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelStepper.swift; sourceTree = "<group>"; };
-		94A6F30B1F687F3E007B083C /* icon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_64.png; sourceTree = "<group>"; };
-		94A6F30C1F687F3E007B083C /* icon_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_320.png; sourceTree = "<group>"; };
 		94D2AF2621EE57AA006E2312 /* Francis Preve.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Francis Preve.json"; sourceTree = "<group>"; };
 		94D37DD320E06641002008A4 /* Sound of Izrael.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sound of Izrael.json"; sourceTree = "<group>"; };
 		94D917AB1F550D0D006ACB4E /* FlatToggleButtonStyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatToggleButtonStyleKit.swift; sourceTree = "<group>"; };
@@ -370,6 +611,7 @@
 		94F53E8C212F11A90012C0DE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "AudioKitSynthOne/Developer/zh-Hans.lproj/zh-Hans.lproj/Dev.strings"; sourceTree = SOURCE_ROOT; };
 		94F694C51F683D5D0061DA5E /* CallbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackButton.swift; sourceTree = "<group>"; };
 		94FEFEC71F3150D00064EC09 /* SliderTransposeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTransposeButton.swift; sourceTree = "<group>"; };
+		B80A0CB0E223C194EB0F415E /* Pods_SynthOneAU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SynthOneAU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA27CDAC229BF66A1C649B42 /* Pods_AudioKitSynthOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioKitSynthOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40CBA2620CDE2B000A8245F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C40CBA2720CDE72500A8245F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -606,6 +848,14 @@
 		EA388D2221071C170026C0C0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA388D2721071C330026C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F437E99E20EB22D00096FEAC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F472011921FB00A2002700EB /* SynthOneAU.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SynthOneAU.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F472011E21FB00A2002700EB /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
+		F472012121FB00A2002700EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F472012321FB00A2002700EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F472012421FB00A2002700EB /* SynthOneAU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SynthOneAU-Bridging-Header.h"; sourceTree = "<group>"; };
+		F472012B21FB01D8002700EB /* SynthOneAUv3AudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthOneAUv3AudioUnit.swift; sourceTree = "<group>"; };
+		F472021021FB0675002700EB /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F472021221FB0675002700EB /* AudioKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F482CBF62123CDE70093ADC8 /* triangle_0674.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle_0674.json; sourceTree = "<group>"; };
 		F482CBF72123CDE70093ADC8 /* bandlimitedWaveformFrequencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bandlimitedWaveformFrequencies.json; sourceTree = "<group>"; };
 		F482CBF82123CDE70093ADC8 /* pwm_0000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pwm_0000.json; sourceTree = "<group>"; };
@@ -689,6 +939,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F472011621FB00A2002700EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F472021121FB0675002700EB /* AudioKit.framework in Frameworks */,
+				F472021321FB0675002700EB /* AudioKitUI.framework in Frameworks */,
+				A08A08F00E48AEF07FC2339E /* Pods_SynthOneAU.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -701,6 +961,8 @@
 				D96BC33C5D07149EC2FAB8CE /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 				5FAA47B316A5F659F440DAC9 /* Pods-AKS1Extension.debug.xcconfig */,
 				90231BFB16779C7C2CD6CB3F /* Pods-AKS1Extension.release.xcconfig */,
+				531A1EF03D9FFA3888FEF923 /* Pods-SynthOneAU.debug.xcconfig */,
+				4A37384DD32DD2FB244D80D9 /* Pods-SynthOneAU.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -742,12 +1004,15 @@
 		9461F0371F5CAAE600EE226E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F472021021FB0675002700EB /* AudioKit.framework */,
+				F472021221FB0675002700EB /* AudioKitUI.framework */,
 				F496E5CE21FAC739008294C6 /* AudioKit.framework */,
 				F496E5D021FAC739008294C6 /* AudioKitUI.framework */,
 				C4B9C02A201D54D400D9833D /* AudioToolbox.framework */,
 				BA27CDAC229BF66A1C649B42 /* Pods_AudioKitSynthOne.framework */,
 				CB0076A913A8D9EB5B5A6C27 /* Pods_OneSignalNotificationServiceExtension.framework */,
 				45E1A7C3C54D27427C4A71B1 /* Pods_AKS1Extension.framework */,
+				B80A0CB0E223C194EB0F415E /* Pods_SynthOneAU.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -765,8 +1030,6 @@
 			isa = PBXGroup;
 			children = (
 				C4D193CE1F1187B500FF4FE4 /* Assets.xcassets */,
-				94A6F30B1F687F3E007B083C /* icon_64.png */,
-				94A6F30C1F687F3E007B083C /* icon_320.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1243,6 +1506,7 @@
 				EA143DF8210A86DC00543E17 /* Dev.strings */,
 				C435C4D620C511DB00DAECCD /* README.md */,
 				C4D193C61F1187B500FF4FE4 /* AudioKitSynthOne */,
+				F472011A21FB00A2002700EB /* SynthOneAU */,
 				9461F0371F5CAAE600EE226E /* Frameworks */,
 				941645CB20B3597300D62851 /* OneSignalNotificationServiceExtension */,
 				54056ADC83E937067BBBA387 /* Pods */,
@@ -1255,6 +1519,7 @@
 			children = (
 				C4D193C41F1187B500FF4FE4 /* AudioKitSynthOne.app */,
 				941645CA20B3597300D62851 /* OneSignalNotificationServiceExtension.appex */,
+				F472011921FB00A2002700EB /* SynthOneAU.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1304,6 +1569,18 @@
 				947956B11F329AB500FE5D9B /* Stepper */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		F472011A21FB00A2002700EB /* SynthOneAU */ = {
+			isa = PBXGroup;
+			children = (
+				F472011E21FB00A2002700EB /* AudioUnitViewController.swift */,
+				F472012B21FB01D8002700EB /* SynthOneAUv3AudioUnit.swift */,
+				F472012021FB00A2002700EB /* MainInterface.storyboard */,
+				F472012321FB00A2002700EB /* Info.plist */,
+				F472012421FB00A2002700EB /* SynthOneAU-Bridging-Header.h */,
+			);
+			path = SynthOneAU;
 			sourceTree = "<group>";
 		};
 		F482CBF52123CDE70093ADC8 /* BandlimitedWavetables */ = {
@@ -1450,11 +1727,30 @@
 			);
 			dependencies = (
 				941645D020B3597300D62851 /* PBXTargetDependency */,
+				F472012621FB00A2002700EB /* PBXTargetDependency */,
 			);
 			name = AudioKitSynthOne;
 			productName = AudioKitSynthOne;
 			productReference = C4D193C41F1187B500FF4FE4 /* AudioKitSynthOne.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F472011821FB00A2002700EB /* SynthOneAU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F472012A21FB00A2002700EB /* Build configuration list for PBXNativeTarget "SynthOneAU" */;
+			buildPhases = (
+				6511970156740901A195A208 /* [CP] Check Pods Manifest.lock */,
+				F472011521FB00A2002700EB /* Sources */,
+				F472011621FB00A2002700EB /* Frameworks */,
+				F472011721FB00A2002700EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SynthOneAU;
+			productName = SynthOneAU;
+			productReference = F472011921FB00A2002700EB /* SynthOneAU.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -1462,7 +1758,7 @@
 		C4D193BC1F1187B500FF4FE4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = AudioKit;
 				TargetAttributes = {
@@ -1492,6 +1788,11 @@
 							};
 						};
 					};
+					F472011821FB00A2002700EB = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 9W69ZP8S5F;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = C4D193BF1F1187B500FF4FE4 /* Build configuration list for PBXProject "AudioKitSynthOne" */;
@@ -1515,6 +1816,7 @@
 			targets = (
 				C4D193C31F1187B500FF4FE4 /* AudioKitSynthOne */,
 				941645C920B3597300D62851 /* OneSignalNotificationServiceExtension */,
+				F472011821FB00A2002700EB /* SynthOneAU */,
 			);
 		};
 /* End PBXProject section */
@@ -1610,6 +1912,95 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F472011721FB00A2002700EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F472019721FB0332002700EB /* sawtooth_0337.json in Resources */,
+				F472020A21FB0477002700EB /* Tunings.storyboard in Resources */,
+				F472019521FB0332002700EB /* sawtooth_0084.json in Resources */,
+				F472018C21FB032C002700EB /* square_1348.json in Resources */,
+				F472018821FB032C002700EB /* square_0084.json in Resources */,
+				F472016621FB0314002700EB /* bandlimitedWaveforms.json in Resources */,
+				F472021421FB0B95002700EB /* Main.storyboard in Resources */,
+				F472017E21FB0324002700EB /* pwm_0674.json in Resources */,
+				F472018B21FB032C002700EB /* square_0674.json in Resources */,
+				F472016B21FB031D002700EB /* triangle_0010.json in Resources */,
+				F472016C21FB031D002700EB /* triangle_0021.json in Resources */,
+				F472013821FB0254002700EB /* Brice Beasley.json in Resources */,
+				F472018221FB032C002700EB /* square_0001.json in Resources */,
+				F472017721FB0324002700EB /* pwm_0005.json in Resources */,
+				F472018921FB032C002700EB /* square_0168.json in Resources */,
+				F472019A21FB0332002700EB /* sawtooth_2696.json in Resources */,
+				F472018A21FB032C002700EB /* square_0337.json in Resources */,
+				F472019921FB0332002700EB /* sawtooth_1348.json in Resources */,
+				F472013921FB0254002700EB /* Bonus.json in Resources */,
+				F472013D21FB0254002700EB /* JEC.json in Resources */,
+				F472016721FB031D002700EB /* triangle_0000.json in Resources */,
+				F472013A21FB0254002700EB /* DJ Puzzle.json in Resources */,
+				F472017421FB0324002700EB /* pwm_0000.json in Resources */,
+				F472018021FB0324002700EB /* pwm_2696.json in Resources */,
+				F472018121FB032C002700EB /* square_0000.json in Resources */,
+				F472015F21FB02F6002700EB /* Dev.storyboard in Resources */,
+				F472019321FB0332002700EB /* sawtooth_0021.json in Resources */,
+				F472014F21FB02BA002700EB /* Assets.xcassets in Resources */,
+				F472014121FB0254002700EB /* User.json in Resources */,
+				F472017821FB0324002700EB /* pwm_0010.json in Resources */,
+				F472019421FB0332002700EB /* sawtooth_0042.json in Resources */,
+				F472018721FB032C002700EB /* square_0042.json in Resources */,
+				F472019121FB0332002700EB /* sawtooth_0005.json in Resources */,
+				F47201FF21FB0467002700EB /* spark.png in Resources */,
+				F472016E21FB031D002700EB /* triangle_0084.json in Resources */,
+				F472017021FB031D002700EB /* triangle_0337.json in Resources */,
+				F472014821FB029C002700EB /* About.storyboard in Resources */,
+				F472019621FB0332002700EB /* sawtooth_0168.json in Resources */,
+				F47201EA21FB0423002700EB /* Presets.storyboard in Resources */,
+				F472020921FB0471002700EB /* tunings_v0_upgrade_path_test.json in Resources */,
+				F472014C21FB02AE002700EB /* MailingList.storyboard in Resources */,
+				F472016F21FB031D002700EB /* triangle_0168.json in Resources */,
+				F472017121FB031D002700EB /* triangle_0674.json in Resources */,
+				F472016521FB0314002700EB /* bandlimitedWaveformFrequencies.json in Resources */,
+				F472017F21FB0324002700EB /* pwm_1348.json in Resources */,
+				F472018E21FB0332002700EB /* sawtooth_0000.json in Resources */,
+				F472016A21FB031D002700EB /* triangle_0005.json in Resources */,
+				F472017621FB0324002700EB /* pwm_0002.json in Resources */,
+				F472013C21FB0254002700EB /* Francis Preve.json in Resources */,
+				F472019021FB0332002700EB /* sawtooth_0002.json in Resources */,
+				F47201B321FB0375002700EB /* Effects.storyboard in Resources */,
+				F472016921FB031D002700EB /* triangle_0002.json in Resources */,
+				F472018521FB032C002700EB /* square_0010.json in Resources */,
+				F472013E21FB0254002700EB /* Red Sky Lullaby.json in Resources */,
+				F47201ED21FB043A002700EB /* Sequencer.storyboard in Resources */,
+				F472014021FB0254002700EB /* Starter Bank.json in Resources */,
+				F472012221FB00A2002700EB /* MainInterface.storyboard in Resources */,
+				F47201C321FB03AF002700EB /* Header.storyboard in Resources */,
+				F472017521FB0324002700EB /* pwm_0001.json in Resources */,
+				F472017321FB031D002700EB /* triangle_2696.json in Resources */,
+				F472016D21FB031D002700EB /* triangle_0042.json in Resources */,
+				F472018621FB032C002700EB /* square_0021.json in Resources */,
+				F472017D21FB0324002700EB /* pwm_0337.json in Resources */,
+				F472018321FB032C002700EB /* square_0002.json in Resources */,
+				F472018F21FB0332002700EB /* sawtooth_0001.json in Resources */,
+				F472016821FB031D002700EB /* triangle_0001.json in Resources */,
+				F472017A21FB0324002700EB /* pwm_0042.json in Resources */,
+				F472013F21FB0254002700EB /* Sound of Izrael.json in Resources */,
+				F472017221FB031D002700EB /* triangle_1348.json in Resources */,
+				F472017921FB0324002700EB /* pwm_0021.json in Resources */,
+				F472013721FB0254002700EB /* BankA.json in Resources */,
+				F472017B21FB0324002700EB /* pwm_0084.json in Resources */,
+				F472019221FB0332002700EB /* sawtooth_0010.json in Resources */,
+				F472021521FB1207002700EB /* Localizable.strings in Resources */,
+				F472019821FB0332002700EB /* sawtooth_0674.json in Resources */,
+				F472018421FB032C002700EB /* square_0005.json in Resources */,
+				F47201BA21FB038C002700EB /* Envelopes.storyboard in Resources */,
+				F472018D21FB032C002700EB /* square_2696.json in Resources */,
+				F472013B21FB0254002700EB /* Electronisounds.json in Resources */,
+				F47201BB21FB0393002700EB /* Generators.storyboard in Resources */,
+				F47201FB21FB045D002700EB /* TouchPad.storyboard in Resources */,
+				F472017C21FB0324002700EB /* pwm_0168.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1625,6 +2016,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6511970156740901A195A208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SynthOneAU-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1849,6 +2258,160 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F472011521FB00A2002700EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47201C721FB03BA002700EB /* KeyboardSettingsViewController.swift in Sources */,
+				F472014221FB025E002700EB /* CategoryCell.swift in Sources */,
+				F47201B021FB036D002700EB /* AETypes.m in Sources */,
+				F47201CD21FB03C0002700EB /* KeyboardView.swift in Sources */,
+				F472020321FB0471002700EB /* Tunings+UpgradePaths.swift in Sources */,
+				F47201A021FB034F002700EB /* S1DSPKernel+getSetSynthParameters.mm in Sources */,
+				F47201A521FB034F002700EB /* S1DSPKernel+setup.mm in Sources */,
+				F47201AD21FB036D002700EB /* AEArray.m in Sources */,
+				F472020F21FB0484002700EB /* TuningsPitchWheelView.swift in Sources */,
+				F472015B21FB02E8002700EB /* Knob+Touches.swift in Sources */,
+				F472013421FB024C002700EB /* Presets+UITextViewDelegate.swift in Sources */,
+				F47201D621FB040A002700EB /* MIDISettingsViewController.swift in Sources */,
+				F47201A921FB0356002700EB /* S1NoteState.mm in Sources */,
+				F47201BC21FB0398002700EB /* GeneratorsPanelController.swift in Sources */,
+				F47201A321FB034F002700EB /* S1DSPKernel+process.mm in Sources */,
+				F472015821FB02E2002700EB /* ToggleSwitchStyleKit.swift in Sources */,
+				F472012C21FB01D8002700EB /* SynthOneAUv3AudioUnit.swift in Sources */,
+				F47201A621FB034F002700EB /* S1DSPKernel+startStopNotes.mm in Sources */,
+				F472014421FB025E002700EB /* PresetUIButton.swift in Sources */,
+				F472014E21FB02B2002700EB /* MailingListViewController.swift in Sources */,
+				F47201E421FB041D002700EB /* Bank.swift in Sources */,
+				F47201F421FB0445002700EB /* VerticalSlider.swift in Sources */,
+				F47201CB21FB03C0002700EB /* BlackKeyStyleKit.swift in Sources */,
+				F47201F821FB044B002700EB /* ArpDirectionStyleKit.swift in Sources */,
+				F472012D21FB024C002700EB /* Presets+BankPopOverDelegate.swift in Sources */,
+				F47201B621FB0381002700EB /* LFOPickerStyleKit.swift in Sources */,
+				F472014721FB0280002700EB /* Private.swift in Sources */,
+				F47201DF21FB0416002700EB /* ChildPanel.swift in Sources */,
+				F47201C521FB03B4002700EB /* HeaderViewContoller.swift in Sources */,
+				F472013121FB024C002700EB /* Presets+UIDocumentPickerDelegate.swift in Sources */,
+				F47201FA21FB0457002700EB /* Manager+AppSettings.swift in Sources */,
+				F472015521FB02E2002700EB /* ToggleButton.swift in Sources */,
+				F472016321FB030C002700EB /* Conductor.swift in Sources */,
+				F47201FE21FB0467002700EB /* AKVerticalPad.swift in Sources */,
+				F47201A221FB034F002700EB /* S1DSPKernel+parameters.mm in Sources */,
+				F47201E221FB0416002700EB /* PanelController.swift in Sources */,
+				F472019C21FB034F002700EB /* S1DSPKernel.mm in Sources */,
+				F47201EC21FB0433002700EB /* Rate.swift in Sources */,
+				F47201D521FB040A002700EB /* MIDILearnable.swift in Sources */,
+				F47201D321FB0409002700EB /* MIDIInput.swift in Sources */,
+				F472015421FB02E2002700EB /* SynthButton.swift in Sources */,
+				F472013221FB024C002700EB /* Presets+UITableViewDataSource.swift in Sources */,
+				F47201F021FB0445002700EB /* ArpDirectionButton.swift in Sources */,
+				F47201AE21FB036D002700EB /* AEUtilities.m in Sources */,
+				F472016421FB030C002700EB /* SDSustainer.swift in Sources */,
+				F47201E121FB0416002700EB /* NavButtonStyleKit.swift in Sources */,
+				F47201F521FB044B002700EB /* TempoStyleKit.swift in Sources */,
+				F472014521FB025E002700EB /* String+CapitalizeFirst.swift in Sources */,
+				F472020121FB0467002700EB /* TouchPointStyleKit.swift in Sources */,
+				F472015D21FB02EE002700EB /* Stepper.swift in Sources */,
+				F47201F621FB044B002700EB /* ArpButtonStyleKit.swift in Sources */,
+				F472014921FB02A1002700EB /* AboutViewController.swift in Sources */,
+				F472015721FB02E2002700EB /* ToggleSwitch.swift in Sources */,
+				F47201B521FB0381002700EB /* LFOWavePicker.swift in Sources */,
+				F472014321FB025E002700EB /* PresetCell.swift in Sources */,
+				F47201CC21FB03C0002700EB /* KeyboardShowButton.swift in Sources */,
+				F472016021FB02FD002700EB /* DevViewController.swift in Sources */,
+				F472020E21FB0484002700EB /* TuningCell.swift in Sources */,
+				F472015921FB02E2002700EB /* iPhoneToggleButton.swift in Sources */,
+				F47201CF21FB03FB002700EB /* ABLLinkManager.swift in Sources */,
+				F47201BD21FB039F002700EB /* FilterTypeButton.swift in Sources */,
+				F47201A121FB034F002700EB /* S1DSPKernel+MIDI.mm in Sources */,
+				F47201F321FB0445002700EB /* TempoStepper.swift in Sources */,
+				F47201AA21FB036D002700EB /* AEWeakRetainingProxy.m in Sources */,
+				F47201C421FB03B4002700EB /* HeaderNavButton.swift in Sources */,
+				F47201F921FB0457002700EB /* AppSettings.swift in Sources */,
+				F472020421FB0471002700EB /* Tunings+DefaultTunings.swift in Sources */,
+				F472019E21FB034F002700EB /* S1DSPKernel+didChanges.mm in Sources */,
+				F47201C221FB03A7002700EB /* TopUIButtonStyleKit.swift in Sources */,
+				F47201F721FB044B002700EB /* SliderStyleKit.swift in Sources */,
+				F47201C121FB03A7002700EB /* MorphSelectorStyleKit.swift in Sources */,
+				F47201E621FB041D002700EB /* Manager+PresetsDelegate.swift in Sources */,
+				F47201C821FB03BA002700EB /* Manager+Keyboard.swift in Sources */,
+				F47201D821FB040A002700EB /* Manager+MIDISettingsPopOverDelegate.swift in Sources */,
+				F472011F21FB00A2002700EB /* AudioUnitViewController.swift in Sources */,
+				F472020021FB0467002700EB /* TouchPoint.swift in Sources */,
+				F472016121FB02FD002700EB /* Manager+DevView.swift in Sources */,
+				F472014D21FB02B2002700EB /* Manager+MailingListDelegate.swift in Sources */,
+				F47201EF21FB0445002700EB /* ArpButton.swift in Sources */,
+				F47201CE21FB03C0002700EB /* ModWheelStyleKit.swift in Sources */,
+				F47201E021FB0416002700EB /* NavButton.swift in Sources */,
+				F472015A21FB02E8002700EB /* KnobStyleKit.swift in Sources */,
+				F47201D721FB040A002700EB /* Manager+MIDIListener.swift in Sources */,
+				F472014621FB027D002700EB /* Helpers.swift in Sources */,
+				F472020521FB0471002700EB /* Tunings+Harmonic.swift in Sources */,
+				F472012E21FB024C002700EB /* Presets+CategoryDelegate.swift in Sources */,
+				F47201AC21FB036D002700EB /* AEManagedValue.m in Sources */,
+				F47201E821FB041D002700EB /* PresetDataManager.swift in Sources */,
+				F47201E921FB041D002700EB /* PresetEditorViewController.swift in Sources */,
+				F47201DC21FB0410002700EB /* Manager+PushNotification.swift in Sources */,
+				F47201B921FB0387002700EB /* EnvelopesPanelController.swift in Sources */,
+				F472020D21FB047F002700EB /* TuningsPanel+UITableViewDelegate.swift in Sources */,
+				F47201D021FB03FB002700EB /* LinkExtensions.swift in Sources */,
+				F47201EE21FB043D002700EB /* SequencerPanelController.swift in Sources */,
+				F47201D921FB0410002700EB /* Manager.swift in Sources */,
+				F47201B121FB036D002700EB /* AEMainThreadEndpoint.m in Sources */,
+				F472014A21FB02A1002700EB /* InfoViewController.swift in Sources */,
+				F47201D221FB0409002700EB /* MIDICell.swift in Sources */,
+				F472019B21FB0339002700EB /* S1AudioUnit.mm in Sources */,
+				F472015E21FB02EE002700EB /* StepperStyleKit.swift in Sources */,
+				F47201DE21FB0410002700EB /* UpdatableViewController.swift in Sources */,
+				F47201B721FB0381002700EB /* LFOButtonStyleKit.swift in Sources */,
+				F472013321FB024C002700EB /* Presets+UITableViewDelegate.swift in Sources */,
+				F47201B221FB036D002700EB /* AEAudioThreadEndpoint.m in Sources */,
+				F47201A721FB034F002700EB /* S1DSPKernel+tapers.mm in Sources */,
+				F47201CA21FB03BA002700EB /* WheelSettingsViewController.swift in Sources */,
+				F472013521FB024C002700EB /* Presets+LoadSaveManipulate.swift in Sources */,
+				F47201AB21FB036D002700EB /* AEMessageQueue.m in Sources */,
+				F472020721FB0471002700EB /* Tuning.swift in Sources */,
+				F472020221FB0471002700EB /* Tunings.swift in Sources */,
+				F47201BF21FB039F002700EB /* MorphSelector.swift in Sources */,
+				F47201F121FB0445002700EB /* RateKnob.swift in Sources */,
+				F47201D421FB0409002700EB /* MIDIKnob.swift in Sources */,
+				F472015621FB02E2002700EB /* ToggleButtonStyleKit.swift in Sources */,
+				F47201FC21FB0460002700EB /* TouchPadPanelController.swift in Sources */,
+				F47201EB21FB0427002700EB /* PresetsCategoriesViewController.swift in Sources */,
+				F47201E321FB0416002700EB /* Manager+Navigation.swift in Sources */,
+				F47201D121FB0409002700EB /* ChannelStepper.swift in Sources */,
+				F472013021FB024C002700EB /* Presets+PresetPopOverDelegate.swift in Sources */,
+				F47201C921FB03BA002700EB /* Manager+ModWheelDelegate.swift in Sources */,
+				F472015C21FB02E8002700EB /* Knob.swift in Sources */,
+				F47201DD21FB0410002700EB /* UIViewController+DisplayAlert.swift in Sources */,
+				F47201DB21FB0410002700EB /* Manager+EmbeddedViewsDelegate.swift in Sources */,
+				F47201E721FB041D002700EB /* Preset.swift in Sources */,
+				F47201E521FB041D002700EB /* BankEditorViewController.swift in Sources */,
+				F472020C21FB047F002700EB /* TuningsPanel+UITableViewDataSource.swift in Sources */,
+				F472020821FB0471002700EB /* TuningBank.swift in Sources */,
+				F472012F21FB024C002700EB /* Presets+PresetCellDelegate.swift in Sources */,
+				F472019D21FB034F002700EB /* S1DSPKernel+destroy.mm in Sources */,
+				F47201F221FB0445002700EB /* SliderTransposeButton.swift in Sources */,
+				F47201B421FB037A002700EB /* EffectsPanelController.swift in Sources */,
+				F47201DA21FB0410002700EB /* Manager+callbacks.swift in Sources */,
+				F47201C621FB03B4002700EB /* Manager+HeaderDelegate.swift in Sources */,
+				F47201AF21FB036D002700EB /* AETime.m in Sources */,
+				F472020B21FB047F002700EB /* TuningsPanelController.swift in Sources */,
+				F472020621FB0471002700EB /* Tunings+Math.swift in Sources */,
+				F472014B21FB02A1002700EB /* MoreAppsController.swift in Sources */,
+				F472015321FB02E2002700EB /* CallbackButton.swift in Sources */,
+				F472016221FB030C002700EB /* AKSynthOne.swift in Sources */,
+				F47201BE21FB039F002700EB /* FlatToggleButton.swift in Sources */,
+				F47201FD21FB0467002700EB /* AKTouchPadView.swift in Sources */,
+				F472019F21FB034F002700EB /* S1DSPKernel+getSetDependentParameters.mm in Sources */,
+				F47201C021FB03A7002700EB /* FlatToggleButtonStyleKit.swift in Sources */,
+				F47201A821FB034F002700EB /* S1DSPKernel+toggleKeys.mm in Sources */,
+				F47201B821FB0381002700EB /* LFOToggle.swift in Sources */,
+				F472013621FB024C002700EB /* PresetsViewController.swift in Sources */,
+				F47201A421FB034F002700EB /* S1DSPKernel+reset.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1856,6 +2419,11 @@
 			isa = PBXTargetDependency;
 			target = 941645C920B3597300D62851 /* OneSignalNotificationServiceExtension */;
 			targetProxy = 941645CF20B3597300D62851 /* PBXContainerItemProxy */;
+		};
+		F472012621FB00A2002700EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F472011821FB00A2002700EB /* SynthOneAU */;
+			targetProxy = F472012521FB00A2002700EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2098,6 +2666,14 @@
 				94F53E89212F11790012C0DE /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F472012021FB00A2002700EB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F472012121FB00A2002700EB /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2360,6 +2936,64 @@
 			};
 			name = Release;
 		};
+		F472012821FB00A2002700EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 531A1EF03D9FFA3888FEF923 /* Pods-SynthOneAU.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W69ZP8S5F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SynthOneAU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.AudioKitSynthOne.SynthOneAU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "SynthOneAU/SynthOneAU-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F472012921FB00A2002700EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A37384DD32DD2FB244D80D9 /* Pods-SynthOneAU.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W69ZP8S5F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SynthOneAU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audiokitpro.AudioKitSynthOne.SynthOneAU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SynthOneAU/SynthOneAU-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2386,6 +3020,15 @@
 			buildConfigurations = (
 				C4D193D71F1187B500FF4FE4 /* Debug */,
 				C4D193D81F1187B500FF4FE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F472012A21FB00A2002700EB /* Build configuration list for PBXNativeTarget "SynthOneAU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F472012821FB00A2002700EB /* Debug */,
+				F472012921FB00A2002700EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

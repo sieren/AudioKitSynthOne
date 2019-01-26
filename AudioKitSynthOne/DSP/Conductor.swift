@@ -171,7 +171,8 @@ class Conductor: S1Protocol {
                 AKLog("Unsuccessful")
             }
         }
-        Audiobus.start()
+        //TODO
+//        Audiobus.start()
     }
 
     func updateDisplayLabel(_ message: String) {
@@ -244,19 +245,20 @@ class Conductor: S1Protocol {
 
     @objc func checkIAAConnectionsEnterBackground() {
 
-        if let audiobusClient = Audiobus.client {
-
-            if !audiobusClient.isConnected && !audiobusClient.isConnectedToInput && !backgroundAudio {
-                deactivateSession()
-                AKLog("disconnected without timer")
-            } else {
-                iaaTimer.invalidate()
-                iaaTimer = Timer.scheduledTimer(timeInterval: 20 * 60,
-                                                target: self,
-                                                selector: #selector(self.checkIAAConnectionsEnterBackground),
-                                                userInfo: nil, repeats: true)
-            }
-        }
+        //TODO
+//        if let audiobusClient = Audiobus.client {
+//
+//            if !audiobusClient.isConnected && !audiobusClient.isConnectedToInput && !backgroundAudio {
+//                deactivateSession()
+//                AKLog("disconnected without timer")
+//            } else {
+//                iaaTimer.invalidate()
+//                iaaTimer = Timer.scheduledTimer(timeInterval: 20 * 60,
+//                                                target: self,
+//                                                selector: #selector(self.checkIAAConnectionsEnterBackground),
+//                                                userInfo: nil, repeats: true)
+//            }
+//        }
     }
 
     func checkIAAConnectionsEnterForeground() {

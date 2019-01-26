@@ -9,6 +9,8 @@
 import UIKit
 import CloudKit
 import MobileCoreServices
+import AudioKit
+
 
 public protocol TuningsPitchWheelViewTuningDidChange {
     func tuningDidChange()

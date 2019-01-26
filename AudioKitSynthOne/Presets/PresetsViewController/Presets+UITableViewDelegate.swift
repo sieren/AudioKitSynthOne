@@ -6,6 +6,8 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+import AudioKit
+
 extension PresetsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

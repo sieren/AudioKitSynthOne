@@ -7,6 +7,8 @@
 //
 
 import AudioKit
+import AudioKitUI
+
 import UIKit
 
 // swiftlint:disable file_length
@@ -84,11 +86,15 @@ public protocol AKKeyboardDelegate: class {
     }
 
     private var arpIsOn: Bool {
-        return conductor.synth.getSynthParameter(.arpIsOn) > 0 ? true : false
+        //TODO
+//        return conductor.synth.getSynthParameter(.arpIsOn) > 0 ? true : false
+        return false
     }
 
     private var arpIsSequencer: Bool {
-        return conductor.synth.getSynthParameter(.arpIsSequencer) > 0 ? true : false
+        //TODO
+//        return conductor.synth.getSynthParameter(.arpIsSequencer) > 0 ? true : false
+        return false
     }
 
     let naturalNotes = ["C", "D", "E", "F", "G", "A", "B"]

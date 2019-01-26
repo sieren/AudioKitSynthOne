@@ -6,6 +6,8 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+import AudioKit
+
 extension Manager {
     func setupCallbacks() {
 

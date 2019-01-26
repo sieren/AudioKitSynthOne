@@ -9,6 +9,7 @@
 import UIKit
 import ChimpKit
 import MessageUI
+import AudioKit
 
 protocol MailingListDelegate: AnyObject {
     func didSignMailingList(email: String)

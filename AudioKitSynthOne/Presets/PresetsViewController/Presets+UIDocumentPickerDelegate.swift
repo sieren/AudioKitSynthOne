@@ -8,6 +8,8 @@
 
 // Import / UIDocumentPickerDelegate
 
+import AudioKit
+
 extension PresetsViewController: UIDocumentPickerDelegate {
 
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
@@ -25,7 +27,7 @@ extension PresetsViewController: UIDocumentPickerDelegate {
                 if fileName.hasSuffix("json") {
                     // import bank
                     guard let jsonArray = presetJSON as? [Any] else { return }
-                    let importBank = Preset.parseDataToPresets(jsonArray: jsonArray)
+                    let importBank = Preset.parseDataToPresets(conductor: conductor, jsonArray: jsonArray)
 
                     // Update imported presets with bankName
                     var bankName = String(fileName.dropLast(5))
@@ -58,7 +60,7 @@ extension PresetsViewController: UIDocumentPickerDelegate {
                     self.addNewBank(newBankName: bankName, newBankIndex: newBankIndex)
 
                 } else {
-                    let importedPreset = Preset.parseDataToPreset(presetJSON: presetJSON)
+                    let importedPreset = Preset.parseDataToPreset(conductor: conductor, presetJSON: presetJSON)
 
                     // Import preset to User Bank
                     let userBank = presets.filter { $0.bank == userBankName }

@@ -100,9 +100,9 @@ extension Manager {
  */
 
         // keyboard
-        keyboardView.labelMode = appSettings.labelMode
-        keyboardView.octaveCount = appSettings.octaveRange
-        keyboardView.darkMode = appSettings.darkMode
+//        keyboardView.labelMode = appSettings.labelMode
+//        keyboardView.octaveCount = appSettings.octaveRange
+//        keyboardView.darkMode = appSettings.darkMode
     }
 
     func saveAppSettingValues() {
@@ -171,9 +171,10 @@ extension Manager {
  */
 
         // keyboard
-        appSettings.labelMode = keyboardView.labelMode
-        appSettings.octaveRange = keyboardView.octaveCount
-        appSettings.darkMode = keyboardView.darkMode
+        //TODO
+//        appSettings.labelMode = keyboardView.labelMode
+//        appSettings.octaveRange = keyboardView.octaveCount
+//        appSettings.darkMode = keyboardView.darkMode
 
         // State
         appSettings.currentBankIndex = presetsViewController.bankIndex
@@ -196,8 +197,8 @@ extension Manager {
 
             setDefaultsFromAppSettings()
 
-        } catch {
-            AKLog("*** error loading")
+        } catch let error as NSError {
+            AKLog("*** error loading settings.json: \(error)")
         }
     }
 
@@ -234,8 +235,8 @@ extension Manager {
             }
             conductor.banks = banks
 
-        } catch {
-            AKLog("*** error loading")
+        } catch let error as NSError {
+            AKLog("*** error loading banks.json: \(error)")
         }
     }
 

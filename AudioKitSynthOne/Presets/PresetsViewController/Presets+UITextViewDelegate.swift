@@ -6,6 +6,8 @@
 //  Copyright © 2018 AudioKit. All rights reserved.
 //
 
+import UIKit
+
 extension PresetsViewController: UITextViewDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -8,6 +8,8 @@
 
 // MIDI Settings Pop Over Delegate
 
+import AudioKit
+
 extension Manager: MIDISettingsPopOverDelegate {
 
     func resetMIDILearn() {

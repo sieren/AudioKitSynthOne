@@ -175,11 +175,11 @@ class Preset: Codable {
     // MARK: - Class Function to Return array of Presets
 
     // Return Array of Presets
-    class public func parseDataToPresets(jsonArray: [Any]) -> [Preset] {
+    class public func parseDataToPresets(conductor: Conductor, jsonArray: [Any]) -> [Preset] {
         var presets = [Preset]()
         for presetJSON in jsonArray {
             if let presetDictionary = presetJSON as? [String: Any] {
-                let retrievedPreset = Preset(dictionary: presetDictionary)
+                let retrievedPreset = Preset(conductor: conductor, dictionary: presetDictionary)
                 presets.append(retrievedPreset)
             }
         }
@@ -187,9 +187,9 @@ class Preset: Codable {
     }
 
     // Return Single Preset
-    class public func parseDataToPreset(presetJSON: Any) -> Preset {
+    class public func parseDataToPreset(conductor: Conductor, presetJSON: Any) -> Preset {
         if let presetDictionary = presetJSON as? [String: Any] {
-            return Preset(dictionary: presetDictionary)
+            return Preset(conductor: conductor, dictionary: presetDictionary)
         }
         return Preset()
     }
@@ -199,10 +199,10 @@ class Preset: Codable {
     // Init from Dictionary/JSON
     // You MUST match the property name with the dictionary key or you will forever lose the original preset.
 
-    init(dictionary: [String: Any]) {
+    init(conductor: Conductor, dictionary: [String: Any]) {
 
         //TODO
-        guard let s = Global.conductor.synth else {
+        guard let s = conductor.synth else {
             print("ERROR: can't initialize preset until synth is initialized")
             return
         }

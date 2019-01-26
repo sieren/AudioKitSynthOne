@@ -8,6 +8,8 @@
 
 // AKMIDIListener protocol functions
 
+import AudioKit
+
 extension Manager: AKMIDIListener {
 
     public func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {

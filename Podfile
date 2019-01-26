@@ -17,6 +17,10 @@ target 'AudioKitSynthOne' do
     available_pods
 end
 
+target 'SynthOneAU' do
+  available_pods
+end
+
 target 'OneSignalNotificationServiceExtension' do
     pod 'OneSignal', '>= 2.6.2', '< 3.0'
     #    pod 'AudioKit', '>= 4.5'

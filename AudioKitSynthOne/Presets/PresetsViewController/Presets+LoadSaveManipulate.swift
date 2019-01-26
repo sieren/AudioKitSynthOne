@@ -9,6 +9,7 @@
 import MobileCoreServices
 import Disk
 import GameplayKit
+import AudioKit
 
 extension PresetsViewController {
 
@@ -81,8 +82,8 @@ extension PresetsViewController {
         do {
             let retrievedPresetData = try Disk.retrieve(fileName, from: .documents, as: Data.self)
             parsePresetsFromData(data: retrievedPresetData)
-        } catch {
-            AKLog("*** error loading")
+        } catch let error as NSError {
+            AKLog("*** error loading \(fileName): \(error)")
         }
     }
 
@@ -95,11 +96,15 @@ extension PresetsViewController {
     }
 
     func parsePresetsFromData(data: Data) {
-        let presetsJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-        guard let jsonArray = presetsJSON as? [Any] else { return }
+        do {
+            let presetsJSON = try JSONSerialization.jsonObject(with: data, options: [])
+            guard let jsonArray = presetsJSON as? [Any] else { return }
 
-        presets += Preset.parseDataToPresets(jsonArray: jsonArray)
-        sortPresets()
+            presets += Preset.parseDataToPresets(conductor: conductor, jsonArray: jsonArray)
+            sortPresets()
+        } catch let error as NSError {
+            AKLog("can't parse preset from data: \(error)")
+        }
     }
 
     func saveAllPresetsIn(_ bank: String) {
@@ -169,8 +174,8 @@ extension PresetsViewController {
             if let activePreset = try? Disk.retrieve("currentPreset.json", from: .caches, as: Preset.self) {
                 presetsDelegate?.presetDidChange(activePreset)
             }
-        } catch {
-            AKLog("error saving")
+        } catch let error as NSError {
+            AKLog("error saving currentPreset.json: \(error)")
         }
     }
 
@@ -215,7 +220,7 @@ extension PresetsViewController {
                 let presetsJSON = try? JSONSerialization.jsonObject(with: data, options: [])
                 guard let jsonArray = presetsJSON as? [Any] else { return }
 
-                let bundlePresets = Preset.parseDataToPresets(jsonArray: jsonArray)
+                let bundlePresets = Preset.parseDataToPresets(conductor: conductor, jsonArray: jsonArray)
 
                 var newPresets: [Preset] = []
                 bundlePresets.forEach { preset in
