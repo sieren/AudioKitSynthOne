@@ -8,6 +8,7 @@
 
 #import <AudioKit/AudioKit-swift.h>
 
+#include "S1Arpegiator.hpp"
 #include "S1Sequencer.hpp"
 #import "AEArray.h"
 #import "S1ArpModes.hpp"
@@ -111,70 +112,27 @@ void S1Sequencer::process(DSPParameters &params, AEArray *heldNoteNumbersAE) {
                         }
                         const int heldNotesCount = (int)sequencerNotes2.size();
                         const int arpIntervalUp = params[arpInterval] * npof;
-                        const int onOff = 1;
                         const int arpOctaves = (int)params[arpOctave] + 1;
                         const auto arpMode = static_cast<ArpegiatorMode>(params[arpDirection]);
-                        
-                        if (arpMode == ArpegiatorMode::Up) {
-                            
-                            // Up
-                            int index = 0;
-                            for (int octave = 0; octave < arpOctaves; octave++) {
-                                for (int i = 0; i < heldNotesCount; i++) {
-                                    NoteNumber& note = sequencerNotes2[i];
-                                    const int nn = note.noteNumber + (octave * arpIntervalUp);
-                                    struct SeqNoteNumber snn;
-                                    snn.init(nn, onOff);
-                                    std::vector<SeqNoteNumber>::iterator it = sequencerNotes.begin() + index;
-                                    sequencerNotes.insert(it, snn);
-                                    ++index;
-                                }
+
+                        switch(arpMode) {
+                            case ArpegiatorMode::Up: {
+                                Arpegiator::up(sequencerNotes, sequencerNotes2, heldNotesCount, arpOctaves,
+                                               arpIntervalUp);
+                                break;
                             }
-                        } else if (arpMode == ArpegiatorMode::UpDown) {
-                            
-                            //Up
-                            int index = 0;
-                            for (int octave = 0; octave < arpOctaves; octave++) {
-                                for (int i = 0; i < heldNotesCount; i++) {
-                                    NoteNumber& note = sequencerNotes2[i];
-                                    const int nn = note.noteNumber + (octave * arpIntervalUp);
-                                    struct SeqNoteNumber snn;
-                                    snn.init(nn, onOff);
-                                    std::vector<SeqNoteNumber>::iterator it = sequencerNotes.begin() + index;
-                                    sequencerNotes.insert(it, snn);
-                                    ++index;
-                                }
+                            case ArpegiatorMode::UpDown: {
+                                int index = Arpegiator::up(sequencerNotes, sequencerNotes2, heldNotesCount,
+                                                           arpOctaves, arpIntervalUp);
+                                const bool noTail = true;
+                                Arpegiator::down(sequencerNotes, sequencerNotes2, heldNotesCount, arpOctaves,
+                                                 arpIntervalUp, noTail, index);
+                                break;
                             }
-                            //Down, minus head and tail
-                            for (int octave = arpOctaves - 1; octave >= 0; octave--) {
-                                for (int i = heldNotesCount - 1; i >= 0; i--) {
-                                    const bool firstNote = (i == heldNotesCount - 1) && (octave == arpOctaves - 1);
-                                    const bool lastNote = (i == 0) && (octave == 0);
-                                    if (!firstNote && !lastNote) {
-                                        NoteNumber& note = sequencerNotes2[i];
-                                        const int nn = note.noteNumber + (octave * arpIntervalUp);
-                                        struct SeqNoteNumber snn;
-                                        snn.init(nn, onOff);
-                                        std::vector<SeqNoteNumber>::iterator it = sequencerNotes.begin() + index;
-                                        sequencerNotes.insert(it, snn);
-                                        ++index;
-                                    }
-                                }
-                            }
-                        } else if (arpMode == ArpegiatorMode::Down) {
-                            
-                            // ARP Down
-                            int index = 0;
-                            for (int octave = arpOctaves - 1; octave >= 0; octave--) {
-                                for (int i = heldNotesCount - 1; i >= 0; i--) {
-                                    NoteNumber& note = sequencerNotes2[i];
-                                    const int nn = note.noteNumber + (octave * arpIntervalUp);
-                                    struct SeqNoteNumber snn;
-                                    snn.init(nn, onOff);
-                                    std::vector<SeqNoteNumber>::iterator it = sequencerNotes.begin() + index;
-                                    sequencerNotes.insert(it, snn);
-                                    ++index;
-                                }
+                            case ArpegiatorMode::Down: {
+                                Arpegiator::down(sequencerNotes, sequencerNotes2, heldNotesCount, arpOctaves,
+                                                 arpIntervalUp, false);
+                                break;
                             }
                         }
                     }
