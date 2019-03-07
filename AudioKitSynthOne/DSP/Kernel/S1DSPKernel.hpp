@@ -129,6 +129,9 @@ public:
 
     void setBandlimitFrequency(uint32_t blIndex, float frequency);
 
+    // add Link
+    void setLinkData(ABLLinkData linkData);
+
     ///parameter min
     float minimum(S1Parameter i);
     
