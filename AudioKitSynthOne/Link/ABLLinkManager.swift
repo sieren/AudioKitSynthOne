@@ -6,69 +6,6 @@
 //  Copyright © 2017 AudioKit. All rights reserved.
 //
 
-/// Engine-related data that can be changed from the main thread.
-public struct ABLEngineData {
-    /// Hardware output latency in HostTime
-    public var outputLatency: UInt32
-    public var resetToBeatTime: Float64
-    public var proposeBpm: Float64
-    public var quantum: Float64
-    public var requestStart: Bool
-    public var requestStop: Bool
-
-    public init(
-        outputLatency: UInt32 = 0,
-        resetToBeatTime: Float64 = 0,
-        proposeBpm: Float64 = 120,
-        quantum: Float64 = 4,
-        requestStart: Bool = false,
-        requestStop: Bool = false) {
-        self.outputLatency = outputLatency
-        self.resetToBeatTime = resetToBeatTime
-        self.proposeBpm = proposeBpm
-        self.quantum = quantum
-        self.requestStart = requestStart
-        self.requestStop = requestStop
-    }
-}
-
-
-/// Structure that stores all data needed by the audio callback.
-public struct ABLLinkData {
-    #if ABLETON_ENABLED_1
-    public var linkRef: ABLLinkRef
-    /// Shared between threads. Only write when engine not running.
-    public var sampleRate: Float64
-    /// Shared between threads. Only write when engine not running.
-    public var secondsToHostTime: Float64
-    /// Shared between threads. Written by the main thread and only read by the audio thread when doing so will not block.
-    public var sharedEngineData: ABLEngineData
-    /// Copy of sharedEngineData Aowned by audio thread.
-    public var localEngineData: ABLEngineData
-    /// Owned by audio thread
-    public var timeAtLastClick: UInt64
-    /// Owned by audio thread
-    public var isPlaying: Bool
-
-    public init(
-        linkRef: ABLLinkRef,
-        sampleRate: Float64,
-        secondsToHostTime: Float64,
-        sharedEngineData: ABLEngineData,
-        localEngineData: ABLEngineData,
-        timeAtLastClick: UInt64,
-        isPlaying: Bool) {
-        self.linkRef = linkRef
-        self.sampleRate = sampleRate
-        self.secondsToHostTime = secondsToHostTime
-        self.sharedEngineData = sharedEngineData
-        self.localEngineData = localEngineData
-        self.timeAtLastClick = timeAtLastClick
-        self.isPlaying = isPlaying
-    }
-    #endif
-}
-
 public typealias ABLLinkManagerTempoCallback = (_ bpm: Double, _ quantum: Double) -> Void
 public typealias ABLLinkManagerActivationCallback = (_ isEnabled: Bool) -> Void
 public typealias ABLLinkManagerConnectionCallback = (_ isConnected: Bool) -> Void
