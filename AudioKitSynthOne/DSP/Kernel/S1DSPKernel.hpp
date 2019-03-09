@@ -107,6 +107,8 @@ public:
     
     /// Sets beatcounter to 0
     void resetSequencer();
+
+    void setLinkData(ABLLinkData* linkData);
     
     // MIDI
     virtual void handleMIDIEvent(AUMIDIEvent const& midiEvent) override;

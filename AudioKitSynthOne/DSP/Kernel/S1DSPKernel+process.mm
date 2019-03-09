@@ -66,6 +66,8 @@ void S1DSPKernel::process(AUAudioFrameCount frameCount, AUAudioFrameCount buffer
         processSampleCounter = 0;
     }
 
+    ///MARK: Link Sequencer
+    const auto linkRenderData = sequencer.prepareProcess(frameCount, bufferOffset, heldNoteNumbersAE, p);
 
     ///MARK: RENDER LOOP: Render one audio frame at sample rate, i.e. 44100 HZ
     for (AUAudioFrameCount frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
@@ -133,7 +135,7 @@ void S1DSPKernel::process(AUAudioFrameCount frameCount, AUAudioFrameCount buffer
         lfo3_0_1 = 0.5f * (lfo1_0_1 + lfo2_0_1);
         lfo3_1_0 = 0.5f * (lfo1_1_0 + lfo2_1_0);
 
-        sequencer.process(p, heldNoteNumbersAE);
+        sequencer.process(p, heldNoteNumbersAE, frameIndex, linkRenderData);
 
         /// MARK: ARPEGGIATOR + SEQUENCER END
 

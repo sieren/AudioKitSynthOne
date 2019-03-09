@@ -132,7 +132,7 @@ public class Manager: UpdatableViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupLinkStuff()
         // Conductor start
         conductor.start()
         let s = conductor.synth!
@@ -360,8 +360,6 @@ public class Manager: UpdatableViewController {
         appendMIDIKnobs(from: sequencerPanel)
         appendMIDIKnobs(from: devViewController)
         appendMIDIKnobs(from: tuningsPanel)
-
-        setupLinkStuff()
         
         isLoaded = true
     }

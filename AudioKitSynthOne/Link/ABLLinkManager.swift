@@ -45,7 +45,7 @@ public class ABLLinkManager: NSObject {
     // Variables
     // var lock = os_unfair_lock() //ios10
     private var lock = os_unfair_lock()
-    private var linkData: ABLLinkData?
+    var linkData: ABLLinkData?
 
     // Debug
     public var isDebugging: Bool = false

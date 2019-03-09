@@ -9,6 +9,7 @@
 #pragma once
 
 #import <AudioKit/AKAudioUnit.h>
+#import "../Link/S1LinkData.h"
 #import "S1Parameter.h"
 
 #define S1_MAX_POLYPHONY (6)
@@ -94,6 +95,7 @@ typedef struct S1ArpBeatCounter {
 - (void)stopAllNotes;
 - (void)resetDSP;
 - (void)resetSequencer;
+- (void)setLinkData:(ABLLinkData*) data;
 
 // protected passthroughs for S1Protocol called by DSP on main thread
 - (void)dependentParameterDidChange:(DependentParameter)param;

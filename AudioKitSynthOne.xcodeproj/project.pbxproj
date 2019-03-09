@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48C3EE7437FA1B1E7916844E /* Pods_AudioKitSynthOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA27CDAC229BF66A1C649B42 /* Pods_AudioKitSynthOne.framework */; };
+		6908B1FB223174FD001104BE /* libABLLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45DF2A2210176AB000AB3FD /* libABLLink.a */; };
 		69982DAC2230543B00281051 /* Sequencer in Resources */ = {isa = PBXBuildFile; fileRef = 69982DAB2230543B00281051 /* Sequencer */; };
 		69982DAE223056DA00281051 /* S1Sequencer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69982DAD223056DA00281051 /* S1Sequencer.mm */; };
 		69FB4270223119F900A2A3CC /* Link in Resources */ = {isa = PBXBuildFile; fileRef = 69FB426F223119F800A2A3CC /* Link */; };
@@ -692,6 +693,7 @@
 			files = (
 				48C3EE7437FA1B1E7916844E /* Pods_AudioKitSynthOne.framework in Frameworks */,
 				C4B9C02B201D54D400D9833D /* AudioToolbox.framework in Frameworks */,
+				6908B1FB223174FD001104BE /* libABLLink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2307,6 +2309,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51EC225D22B5EE94B01AA474 /* Pods-AudioKitSynthOne.debug.xcconfig */;
 			buildSettings = {
+				ABLETON_ENABLED = 1;
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2344,6 +2347,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2883EE9358887836A57FE08 /* Pods-AudioKitSynthOne.release.xcconfig */;
 			buildSettings = {
+				ABLETON_ENABLED = 1;
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

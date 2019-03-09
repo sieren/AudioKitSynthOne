@@ -173,7 +173,7 @@ class Conductor: S1Protocol {
         synth = AKSynthOne()
         synth.delegate = self
         synth.rampDuration = 0.0 // Handle ramping internally instead of the ramper hack
-
+        synth.internalAU?.setLinkData(&ABLLinkManager.shared.linkData!)
         AudioKit.output = synth
 
         do {

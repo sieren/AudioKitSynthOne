@@ -15,6 +15,7 @@
 @implementation S1AudioUnit {
     // C++ members need to be ivars; they would be copied on access if they were properties.
     S1DSPKernel _kernel;
+    ABLLinkData* _linkData;
     BufferedOutputBus _outputBusBuffer;
     AUHostMusicalContextBlock _musicalContext;
 }
@@ -178,6 +179,7 @@
     if (self.musicalContextBlock) { _musicalContext = self.musicalContextBlock; } else _musicalContext = nil;
     auto parameters = _kernel.p;
     _kernel.destroy();
+    _kernel.setLinkData(_linkData);
     _kernel.init(self.outputBus.format.channelCount, self.outputBus.format.sampleRate);
     _kernel.reset();
     _kernel.restoreValues(parameters);
@@ -229,6 +231,10 @@
 
 - (void)playingNotesDidChange:(PlayingNotes)playingNotes {
     [_s1Delegate playingNotesDidChange:playingNotes];
+}
+
+- (void)setLinkData:(ABLLinkData*) data {
+    _linkData = data;
 }
 
 @end

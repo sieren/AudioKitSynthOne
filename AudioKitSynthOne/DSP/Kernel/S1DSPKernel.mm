@@ -174,3 +174,7 @@ void S1DSPKernel::restoreValues(std::optional<DSPParameters> params) {
 
     // initializeNoteStates() must be called AFTER init returns, BEFORE process, turnOnKey, and turnOffKey
 }
+
+void S1DSPKernel::setLinkData(ABLLinkData *linkData) {
+    sequencer.setLinkData(linkData);
+}

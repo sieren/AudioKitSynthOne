@@ -7,12 +7,65 @@
 //
 
 #import <AudioKit/AudioKit-swift.h>
+#include <AudioToolbox/AudioToolbox.h>
+#include <AVFoundation/AVFoundation.h>
+#include <libkern/OSAtomic.h>
+#include <mach/mach_time.h>
+
+#include <iostream>
+#include <mach/mach_time.h>
 
 #include "S1Arpegiator.hpp"
 #include "S1Sequencer.hpp"
 #import "AEArray.h"
 #import "S1ArpModes.hpp"
 #import "S1AudioUnit.h"
+
+#define INVALID_BEAT_TIME DBL_MIN
+#define INVALID_BPM DBL_MIN
+
+static OSSpinLock lock;
+
+/*
+ * Pull data from the main thread to the audio thread if lock can be
+ * obtained. Otherwise, just use the local copy of the data.
+ */
+static void pullEngineData(ABLLinkData* linkData, ABLEngineData* output) {
+    // Always reset the signaling members to their default state
+    output->resetToBeatTime = INVALID_BEAT_TIME;
+    output->proposeBpm = INVALID_BPM;
+    output->requestStart = NO;
+    output->requestStop = NO;
+    
+    // Attempt to grab the lock guarding the shared engine data but
+    // don't block if we can't get it.
+    if (OSSpinLockTry(&lock)) {
+        // Copy non-signaling members to the local thread cache
+        linkData->localEngineData.outputLatency =
+        linkData->sharedEngineData.outputLatency;
+        linkData->localEngineData.quantum = linkData->sharedEngineData.quantum;
+        
+        // Copy signaling members directly to the output and reset
+        output->resetToBeatTime = linkData->sharedEngineData.resetToBeatTime;
+        linkData->sharedEngineData.resetToBeatTime = INVALID_BEAT_TIME;
+        
+        output->requestStart = linkData->sharedEngineData.requestStart;
+        linkData->sharedEngineData.requestStart = NO;
+        
+        output->requestStop = linkData->sharedEngineData.requestStop;
+        linkData->sharedEngineData.requestStop = NO;
+        
+        output->proposeBpm = linkData->sharedEngineData.proposeBpm;
+        linkData->sharedEngineData.proposeBpm = INVALID_BPM;
+        
+        OSSpinLockUnlock(&lock);
+    }
+    
+    // Copy from the thread local copy to the output. This happens
+    // whether or not we were able to grab the lock.
+    output->outputLatency = linkData->localEngineData.outputLatency;
+    output->quantum = linkData->localEngineData.quantum;
+}
 
 
 S1Sequencer::S1Sequencer(KeyOnCallback keyOnCb,
@@ -34,20 +87,21 @@ void S1Sequencer::reset(bool resetNotes) {
     sequencerNotes2.clear();
 }
 
-void S1Sequencer::process(DSPParameters &params, AEArray *heldNoteNumbersAE) {
-    /// MARK: ARPEGGIATOR + SEQUENCER BEGIN
+ABLRenderData S1Sequencer::prepareProcess(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset,
+                   AEArray *heldNoteNumbersAE, DSPParameters &params)
+{
     const int heldNoteNumbersAECount = heldNoteNumbersAE.count;
-    const BOOL arpSeqIsOn = (params[arpIsOn] == 1.f);
     const BOOL firstTimeAnyKeysHeld = (previousHeldNoteNumbersAECount == 0 && heldNoteNumbersAECount > 0);
     const BOOL firstTimeNoKeysHeld = (heldNoteNumbersAECount == 0 && previousHeldNoteNumbersAECount > 0);
-    
+
+    const BOOL arpSeqIsOn = (params[arpIsOn] == 1.f);
+    // std::cout << ABLLinkBeatAtTime(renderData.sessionState, hostTime, 4) << std::endl;
     // reset arp/seq when user goes from 0 to N, or N to 0 held keys
     if ( arpSeqIsOn && (firstTimeNoKeysHeld || firstTimeAnyKeysHeld) ) {
         
         arpTime = 0;
         arpSampleCounter = 0;
         arpBeatCounter = 0;
-        
         // Turn OFF previous beat's notes
         for (std::list<int>::iterator arpLastNotesIterator = sequencerLastNotes.begin(); arpLastNotesIterator != sequencerLastNotes.end(); ++arpLastNotesIterator) {
             mTurnOffKey(*arpLastNotesIterator);
@@ -56,14 +110,85 @@ void S1Sequencer::process(DSPParameters &params, AEArray *heldNoteNumbersAE) {
         
         mBeatCounterDidChange();
     }
+ //   if (mLinkData == nil) { return ABLRenderData{};}
+    // Get a copy of the current link session state.
+    const ABLLinkSessionStateRef sessionState = ABLLinkCaptureAudioSessionState(mLinkData->linkRef);
+    
+    // Get a copy of relevant engine parameters.
+    ABLEngineData engineData;
+    pullEngineData(mLinkData, &engineData);
+    
+    // The mHostTime member of the timestamp represents the time at
+    // which the buffer is delivered to the audio hardware. The output
+    // latency is the time from when the buffer is delivered to the
+    // audio hardware to when the beginning of the buffer starts
+    // reaching the output. We add those values to get the host time
+    // at which the first sample of this buffer will reach the output.
+    const auto hostTime = mach_absolute_time();
+    const UInt64 hostTimeAtBufferBegin =
+      hostTime + engineData.outputLatency;
+    
+    if (engineData.requestStart && !ABLLinkIsPlaying(sessionState)) {
+        // Request starting playback at the beginning of this buffer.
+        ABLLinkSetIsPlaying(sessionState, YES, hostTimeAtBufferBegin);
+    }
+    
+    if (engineData.requestStop && ABLLinkIsPlaying(sessionState)) {
+        // Request stopping playback at the beginning of this buffer.
+        ABLLinkSetIsPlaying(sessionState, NO, hostTimeAtBufferBegin);
+    }
+    
+    if (!mLinkData->isPlaying && ABLLinkIsPlaying(sessionState)) {
+        // Reset the session state's beat timeline so that the requested
+        // beat time corresponds to the time the transport will start playing.
+        // The returned beat time is the actual beat time mapped to the time
+        // playback will start, which therefore may be less than the requested
+        // beat time by up to a quantum.
+        ABLLinkRequestBeatAtStartPlayingTime(sessionState, 0., engineData.quantum);
+        mLinkData->isPlaying = true;
+    }
+    else if(mLinkData->isPlaying && !ABLLinkIsPlaying(sessionState)) {
+        mLinkData->isPlaying = false;
+    }
+    
+    // Handle a tempo proposal
+    if (engineData.proposeBpm != INVALID_BPM) {
+        // Propose that the new tempo takes effect at the beginning of
+        // this buffer.
+        ABLLinkSetTempo(sessionState, engineData.proposeBpm, hostTimeAtBufferBegin);
+    }
+    
+    ABLLinkCommitAudioSessionState(mLinkData->linkRef, sessionState);
+
+    const Float64 hostTicksPerSample = mLinkData->secondsToHostTime / mLinkData->sampleRate;
+    return ABLRenderData{hostTimeAtBufferBegin, sessionState, hostTimeAtBufferBegin,
+        mLinkData->secondsToHostTime, hostTicksPerSample};
+}
+
+void S1Sequencer::process(DSPParameters &params, AEArray *heldNoteNumbersAE,
+                          AUAudioFrameCount frameIndex, ABLRenderData renderData) {
+    /// MARK: ARPEGGIATOR + SEQUENCER BEGIN
+    const int heldNoteNumbersAECount = heldNoteNumbersAE.count;
+    const BOOL arpSeqIsOn = (params[arpIsOn] == 1.f);
+    const UInt64 hostTime = renderData.beginHostTime + llround(frameIndex * renderData.hostTicksPerSample);
+    const UInt64 lastSampleHostTime = hostTime - llround(renderData.hostTicksPerSample);
+    const BOOL firstTimeAnyKeysHeld = (previousHeldNoteNumbersAECount == 0 && heldNoteNumbersAECount > 0);
+
     
     // If arp is ON, or if previous beat's notes need to be turned OFF
     if ( arpSeqIsOn || sequencerLastNotes.size() > 0 ) {
-        
+
         // Compare previous arpTime to current to see if we crossed a beat boundary
+        const double tempo = params[arpRate];
         const double secPerBeat = 60.f * params[arpSeqTempoMultiplier] / params[arpRate];
         const double r0 = fmod(arpTime, secPerBeat);
-        arpTime = arpSampleCounter/mSampleRate;
+        arpTime = arpSampleCounter / mSampleRate;
+        arpTime = ABLLinkBeatAtTime(renderData.sessionState, hostTime, 1) / tempo; //arpSampleCounter/mSampleRate;
+        const auto newBeatTime = beatTime + (params[arpRate] / 60.f) / mSampleRate;
+        if (static_cast<int>(newBeatTime) > static_cast<int>(beatTime)) {
+            std::cout << "Beat Advanced to: " << newBeatTime << " with arpRate: " << params[arpRate] << std::endl;
+        }
+        beatTime = newBeatTime;
         const double r1 = fmod(arpTime, secPerBeat);
         arpSampleCounter += 1.f;
         
@@ -186,12 +311,18 @@ void S1Sequencer::reserveNotes() {
     sequencerLastNotes.resize(maxSequencerNotes);
 }
 
+/// MARK: End LINK
+
+
 // Getter and Setter
 
 int S1Sequencer::getArpBeatCount() {
     return arpBeatCounter;
 }
 
+void S1Sequencer::setLinkData(ABLLinkData* linkData) {
+    mLinkData = linkData;
+}
 
 void S1Sequencer::setSampleRate(double sampleRate) {
     mSampleRate = sampleRate;

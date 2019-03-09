@@ -10,6 +10,9 @@
 
 extension Manager {
     override func setupLinkStuff() {
+        // Setup Link
+        ABLLinkManager.shared.setup(bpm: 120, quantum: ABLLinkManager.QUANTUM_DEFAULT)
+
         let freezeIt = ABLLinkManager.shared.isConnected || ABLLinkManager.shared.isEnabled
         linkButton.value = freezeIt ? 1 : 0
         appSettings.freezeArpRate = freezeIt
@@ -38,7 +41,7 @@ extension GeneratorsPanelController {
         }
 
         // Setup Link
-        ABLLinkManager.shared.setup(bpm: tempoStepper.value, quantum: ABLLinkManager.QUANTUM_DEFAULT)
+   //     ABLLinkManager.shared.setup(bpm: tempoStepper.value, quantum: ABLLinkManager.QUANTUM_DEFAULT)
 
         // Subscribe tempo change events
         ABLLinkManager.shared.add(listener: .tempo({ bpm, quantum in

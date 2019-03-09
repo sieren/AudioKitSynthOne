@@ -6,6 +6,8 @@
 //  Copyright © 2019 AudioKit. All rights reserved.
 //
 
+#import "ABLLink.h"
+
 typedef struct {
     UInt32 outputLatency; // Hardware output latency in HostTime
     Float64 resetToBeatTime;
@@ -37,3 +39,10 @@ typedef struct {
     bool isPlaying;
 } ABLLinkData;
 
+typedef struct {
+    UInt64 hostTimeAtBufferBegin;
+    ABLLinkSessionStateRef sessionState;
+    UInt64 beginHostTime;
+    Float64 secondsToHostTime;
+    Float64 hostTicksPerSample;
+} ABLRenderData;

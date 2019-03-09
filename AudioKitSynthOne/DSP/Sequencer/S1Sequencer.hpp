@@ -31,11 +31,14 @@ public:
     S1Sequencer(KeyOnCallback keyOnCb, KeyOffCallback keyOffCb, BeatCounterChangedCallback beatChangedCb);
 
     void setSampleRate(double sampleRate);
+    void setLinkData(ABLLinkData* linkData);
     void init();
     void reset(bool resetNotes);
 
     int getArpBeatCount();
-    void process(DSPParameters &params, AEArray *heldNoteNumbersAE);
+    ABLRenderData prepareProcess(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset,
+                        AEArray *heldNoteNumbersAE, DSPParameters &params);
+    void process(DSPParameters &params, AEArray *heldNoteNumbersAE, AUAudioFrameCount frameIndex, ABLRenderData renderData);
 
 private:
     double mSampleRate = 0;
@@ -49,6 +52,7 @@ private:
     double arpSampleCounter = 0;
     double arpTime = 0;
     int arpBeatCounter = 0;
+    float beatTime = 0;
 
     ///once init'd: sequencerNotes can be accessed and mutated only within process and resetDSP
     std::vector<SeqNoteNumber> sequencerNotes;
@@ -58,6 +62,7 @@ private:
     std::list<int> sequencerLastNotes;
 
     int notesPerOctave = 12;
+    ABLLinkData* mLinkData;
 
     // Change notifications
     BeatCounterChangedCallback mBeatCounterDidChange;
